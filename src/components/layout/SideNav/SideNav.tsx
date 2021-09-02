@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
-import { SideIcon, SideLine } from 'styles/side-nav/side-nav';
 import { useWindowSize } from 'hooks/useWindowSize';
+import { SideIcon, SideLine } from './SideNav.styles';
 
-export default function SideNav(props) {
-  const [lineOffset, setLineOffset] = useState(0);
+export default function SideNav() {
+  const [lineOffset, setLineOffset] = useState<number>(0);
   const windowSize = useWindowSize();
-  const container = useRef(null);
+  const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (windowSize.width && container.current) {

@@ -2,12 +2,22 @@ import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { ClearButton, CustomButton } from 'styles/common/buttons';
 import { CustomIcon } from 'styles/common/images';
-import { Navbar, Nav, NavItem } from 'styles/header/header';
-import { NavCollapse, NavCollapseItem } from 'styles/header/header';
+import {
+  Navbar,
+  Nav,
+  NavItem,
+  NavCollapse,
+  NavCollapseItem
+} from './Header.styles';
 
-export default function Header(props) {
+type PropsType = {
+  theme: string;
+  themeToggler: () => void;
+};
+
+export default function Header(props: PropsType) {
   const { theme, themeToggler } = props;
-  const [navCollapse, setNavCollapse] = useState(false);
+  const [navCollapse, setNavCollapse] = useState<boolean>(false);
   return (
     <Navbar>
       <Container>

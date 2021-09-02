@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from 'styles/globals';
-import { lightTheme, darkTheme } from 'styles/themes';
-import Header from 'components/header/Header';
-import SideNav from 'components/side-nav/SideNav';
-import Content from 'components/content/Content';
+import { GlobalStyle } from 'styles/global';
+import { lightTheme, darkTheme } from 'styles/theme';
+import Header from 'components/layout/Header/Header';
+import SideNav from 'components/layout/SideNav/SideNav';
+import Content from 'components/layout/Content/Content';
 
 export default function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const themeToggler = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');

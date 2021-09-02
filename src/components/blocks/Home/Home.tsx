@@ -2,9 +2,9 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { HomeTitle, HomeSubTitle, InfoText } from 'styles/common/fonts';
 import { CustomImage } from 'styles/common/images';
-import { HomeWrapper } from 'styles/content/home/home';
+import { HomeWrapper } from './Home.styles';
 
-export default function Home(props) {
+export default function Home() {
   return (
     <HomeWrapper>
       <Container className='h-100'>

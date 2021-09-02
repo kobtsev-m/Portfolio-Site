@@ -2,7 +2,15 @@ import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 import { CustomIcon } from 'styles/common/images';
 
-const FixedElement = css`
+type FixedElementPropsType = {
+  top?: string;
+  right?: string;
+  bottom?: string;
+  left?: string;
+  height: string;
+};
+
+const FixedElement = css<FixedElementPropsType>`
   position: fixed;
   top: ${(props) => props.top || ''};
   right: ${(props) => props.right || ''};
