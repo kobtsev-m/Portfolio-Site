@@ -1,8 +1,7 @@
-import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { HomeTitle, HomeSubTitle, InfoText } from 'styles/common/fonts';
-import { CustomImage } from 'styles/common/images';
 import { HomeWrapper } from './Home.styles';
+import HomeAvatar from './HomeAvatar';
 
 export default function Home() {
   return (
@@ -26,11 +25,7 @@ export default function Home() {
             </div>
           </Col>
           <Col lg={6} xl={4} className='d-flex align-center'>
-            <CustomImage
-              src='/img/home/photo1.svg'
-              width='100%'
-              height='600px'
-            />
+            <HomeAvatar />
           </Col>
         </Row>
       </Container>

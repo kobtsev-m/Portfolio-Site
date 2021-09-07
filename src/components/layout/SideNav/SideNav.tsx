@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Container } from 'react-bootstrap';
 import { useWindowSize } from 'hooks/useWindowSize';
 import { SideIcon, SideLine } from './SideNav.styles';

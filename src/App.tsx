@@ -7,7 +7,7 @@ import SideNav from 'components/layout/SideNav/SideNav';
 import Content from 'components/layout/Content/Content';
 
 export default function App() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   const themeToggler = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');

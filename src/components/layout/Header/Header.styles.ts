@@ -28,6 +28,7 @@ export const NavCollapse = styled.nav`
   justify-content: center;
   width: 100%;
   background: ${({ theme }) => theme.background};
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1em 0;
 `;
 

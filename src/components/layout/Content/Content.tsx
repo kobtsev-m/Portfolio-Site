@@ -1,4 +1,3 @@
-import React from 'react';
 import About from 'components/blocks/About/About';
 import Home from 'components/blocks/Home/Home';
 

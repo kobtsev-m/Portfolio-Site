@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useWindowSize } from 'hooks/useWindowSize';
 import { Col, Container, Row } from 'react-bootstrap';
 import { ClearButton, CustomButton } from 'styles/common/buttons';
 import { CustomIcon } from 'styles/common/images';
@@ -17,7 +18,13 @@ type PropsType = {
 
 export default function Header(props: PropsType) {
   const { theme, themeToggler } = props;
-  const [navCollapse, setNavCollapse] = useState<boolean>(false);
+  const [navCollapse, setNavCollapse] = useState(false);
+  const windowSize = useWindowSize();
+
+  useEffect(() => {
+    setNavCollapse(false);
+  }, [windowSize]);
+
   return (
     <Navbar>
       <Container>
