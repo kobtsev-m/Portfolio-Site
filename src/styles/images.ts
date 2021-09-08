@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-type PropsType = {
+interface ImagePropsType {
   width: string;
   height: string;
   src: string;
 };
 
-export const CustomIcon = styled.div<PropsType>`
+export const CustomIcon = styled.div<ImagePropsType>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   mask: ${(props) => `url(${props.src})`} no-repeat center;
@@ -14,7 +14,7 @@ export const CustomIcon = styled.div<PropsType>`
   margin-right: 0.6em;
 `;
 
-export const CustomImage = styled.div<PropsType>`
+export const CustomImage = styled.div<ImagePropsType>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   background-image: ${(props) => `url(${props.src})`};

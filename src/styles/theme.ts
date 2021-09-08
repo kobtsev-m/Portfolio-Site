@@ -16,8 +16,8 @@ declare module 'styled-components' {
 const theme = {
   fontMontserrat: '"Montserrat", sans-serif',
   fontOpenSans: '"Open Sans", sans-serif',
-  navHeight: '100px',
-  navMargin: '30px'
+  navHeight: '110px',
+  navMargin: '20px'
 };
 
 export const lightTheme: DefaultTheme = {

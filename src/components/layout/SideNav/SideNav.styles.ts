@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 import { CustomIcon } from 'styles/common/images';
 
-type FixedElementPropsType = {
+interface FixedElementPropsType {
   top?: string;
   right?: string;
   bottom?: string;

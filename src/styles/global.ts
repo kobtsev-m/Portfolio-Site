@@ -1,6 +1,6 @@
 import { css, createGlobalStyle } from 'styled-components';
 
-const macroces = css`
+const macros = css`
   .align-center {
     align-items: center;
   }
@@ -38,5 +38,5 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.fontColor};
     font-family: ${({ theme }) => theme.fontMontserrat}
   }
-  ${macroces}
+  ${macros}
 `;

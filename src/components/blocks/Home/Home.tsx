@@ -1,5 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap';
-import { HomeTitle, HomeSubTitle, InfoText } from 'styles/common/fonts';
+import { HomeTitle, HomeSubTitle, InfoText } from 'styles/fonts';
+import { ScrollButton } from 'styles/common/buttons';
+import { AbsoluteElement } from 'styles/common/position';
 import { HomeWrapper } from './Home.styles';
 import HomeAvatar from './HomeAvatar';
 
@@ -29,6 +31,9 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
+      <AbsoluteElement right='50%' bottom='20px'>
+        <ScrollButton />
+      </AbsoluteElement>
     </HomeWrapper>
   );
 }
