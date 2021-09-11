@@ -1,4 +1,4 @@
-import { SolarSpinnerWrapper, SpinnerPropsType } from './Loaders.style';
+import { SolarSpinnerWrapper, SpinnerPropsType } from './Loaders.styles';
 
 export const SolarSpinner = (props: SpinnerPropsType) => (
   <SolarSpinnerWrapper {...props}>

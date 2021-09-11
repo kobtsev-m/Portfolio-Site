@@ -1,31 +1,5 @@
-import { css, createGlobalStyle } from 'styled-components';
-
-const macros = css`
-  .align-center {
-    align-items: center;
-  }
-  .justify-center {
-    justify-content: center;
-  }
-  .align-between {
-    align-items: space-between;
-  }
-  .justify-between {
-    justify-content: space-between;
-  }
-  .align-start {
-    align-items: flex-start;
-  }
-  .justify-start {
-    justify-content: flex-start;
-  }
-  .align-end {
-    align-items: flex-end;
-  }
-  .justify-end {
-    justify-content: flex-end;
-  }
-`;
+import { createGlobalStyle } from 'styled-components';
+import { media } from './media';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -36,7 +10,15 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.fontColor};
-    font-family: ${({ theme }) => theme.fontMontserrat}
+    font-family: ${({ theme }) => theme.fontMontserrat};
+    font-size: 0.2rem;
   }
-  ${macros}
+  :root {
+    ${media('xs', 'font-size: 75px')};
+    ${media('sm', 'font-size: 80px')};
+    ${media('md', 'font-size: 85px')};
+    ${media('lg', 'font-size: 90px')};
+    ${media('xl', 'font-size: 95px')};
+    ${media('xxl', 'font-size: 100px')};
+  }
 `;

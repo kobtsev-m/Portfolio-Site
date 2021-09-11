@@ -1,43 +1,57 @@
-import { Col, Container, Row } from 'react-bootstrap';
 import {
-  ScrollButton,
-  AbsoluteElement,
-  MainTitle,
+  Box,
+  Column,
+  Container,
+  InfoTextLarge,
   MainSubTitle,
-  InfoTextLarge
+  MainTitle,
+  Row,
+  ScrollButton
 } from 'components/atoms';
-import { IntroWrapper } from './Intro.styles';
+import { IntroTextBlock, IntroWrapper } from './Intro.styles';
 import { IntroAvatar } from './IntroAvatar';
 
 export const Intro = () => {
   return (
     <IntroWrapper>
-      <Container className='h-100'>
-        <Row className='h-100'>
-          <Col lg={6} xl={8} className='d-flex align-center'>
-            <div>
+      <Container height={100}>
+        <Row height={100} mt={{ xs: '0.4rem', xl: '0' }}>
+          <Column
+            lg={6}
+            xl={8}
+            flex
+            align='center'
+            justify={{ xs: 'center', md: 'start' }}
+            style={{ textAlign: 'center' }}
+          >
+            <IntroTextBlock>
               <MainTitle>Michael Kobtsev</MainTitle>
               <MainSubTitle>
-                React Front-end developer in search <br />
-                of interesting projects and proposals
+                React Front-end developer in search of interesting projects and
+                proposals
               </MainSubTitle>
               <InfoTextLarge>
-                I specialize on creating user interfaces & <br />
-                developing rich web applications. I have <br />
-                experience working with big international <br />
-                company & creating many demo projects <br />
-                in this area.
+                I specialize on creating user interfaces & developing rich web
+                applications. I have experience working with big international
+                company & creating many demo projects in this area.
               </InfoTextLarge>
-            </div>
-          </Col>
-          <Col lg={6} xl={4} className='d-flex align-center'>
+            </IntroTextBlock>
+          </Column>
+          <Column
+            lg={6}
+            xl={4}
+            flex
+            align='center'
+            justify={{ xs: 'center', lg: 'end' }}
+            mt={{ xs: '2.5em', lg: '0' }}
+          >
             <IntroAvatar />
-          </Col>
+          </Column>
         </Row>
       </Container>
-      <AbsoluteElement right='50%' bottom='20px'>
-        <ScrollButton className='d-none d-xl-block' />
-      </AbsoluteElement>
+      <Box position='absolute' right='50%' bottom='20px' hideAt='xl'>
+        <ScrollButton />
+      </Box>
     </IntroWrapper>
   );
 };

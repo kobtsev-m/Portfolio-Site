@@ -1,37 +1,50 @@
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { rgba } from 'polished';
 
-export const ClearButton = styled.button`
+type HtmlButtonPropsType = React.HTMLAttributes<HTMLButtonElement>;
+
+export interface ButtonPropsType extends HtmlButtonPropsType {
+  width?: number;
+  isLoading?: boolean;
+}
+
+export const ClearButton = styled.button<ButtonPropsType>`
+  width: ${({ width }) => `${width}%`};
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 24px;
+  line-height: 32px;
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.fontColor};
   border: none;
+  cursor: pointer;
   &:focus {
     outline: none;
   }
 `;
 
-export const CustomButton = styled.button`
+export const CustomButton = styled(ClearButton)`
   font-weight: 600;
-  font-size: 24px;
-  line-height: 32px;
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => rgba(theme.accentColor, 0.7)};
   border: 10px solid ${({ theme }) => rgba(theme.accentColor, 0.7)};
-  padding: 0.6em 1.5em;
+  padding: 0.6em 2em;
 `;
 
 export const BorderButtonWrapper = styled(ClearButton)`
+  font-size: 20px;
+  line-height: 32px;
   width: 100%;
-  height: 3.2em;
+  height: 2.8em;
   font-family: ${({ theme }) => theme.fontOpenSans};
   font-weight: bold;
   letter-spacing: 0.1em;
   color: ${({ theme }) => rgba(theme.fontColor, 0.7)};
   border: 3px solid ${({ theme }) => rgba(theme.fontColor, 0.7)};
   padding: 0 2em;
+  cursor: pointer;
   &:hover:not(:disabled) {
     background-color: ${({ theme }) => theme.fontColor};
     color: ${({ theme }) => theme.background};
@@ -77,6 +90,7 @@ export const ScrollButtonWrapper = styled.button`
   border-radius: 50px;
   margin: 0 0 15px 15px;
   opacity: 0.8;
+  cursor: pointer;
   &::before {
     content: '';
     position: absolute;
@@ -88,9 +102,6 @@ export const ScrollButtonWrapper = styled.button`
     border-radius: 100%;
     margin-left: -2px;
     animation: ${scrollAnimation} 2s infinite;
-  }
-  @media (max-width: 768px) {
-    display: none;
   }
 `;
 

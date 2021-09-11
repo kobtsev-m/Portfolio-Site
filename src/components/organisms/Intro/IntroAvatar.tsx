@@ -3,7 +3,8 @@ import { animated, config, useSprings } from 'react-spring';
 import { darkTheme } from 'styles/theme';
 import { hexToRgb } from 'utils/converters';
 import { AvatarJson as avatar } from 'assets';
-import { BorderButton } from 'components/atoms';
+import { Box, BorderButton } from 'components/atoms';
+import { AvatarSvg } from './Intro.styles';
 
 enum AnimationStatus {
   Animation1,
@@ -57,12 +58,7 @@ export const IntroAvatar = memo(() => {
 
   return (
     <div>
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        viewBox='0 0 718 960'
-        width='100%'
-        height='550px'
-      >
+      <AvatarSvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 718 960'>
         <rect
           x='0'
           y='0'
@@ -75,14 +71,15 @@ export const IntroAvatar = memo(() => {
             <animated.path key={i} style={effect} {...avatar[i]} />
           )
         )}
-      </svg>
-      <BorderButton
-        className='mt-3'
-        onClick={handleAnimateClick}
-        isLoading={status !== AnimationStatus.Stopped}
-      >
-        ANIMATE
-      </BorderButton>
+      </AvatarSvg>
+      <Box mt='0.5em'>
+        <BorderButton
+          onClick={handleAnimateClick}
+          isLoading={status !== AnimationStatus.Stopped}
+        >
+          ANIMATE
+        </BorderButton>
+      </Box>
     </div>
   );
 });

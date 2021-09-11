@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
 import { useWindowSize } from 'hooks/useWindowSize';
-import { ClearButton, CustomButton, CustomIcon } from 'components/atoms';
-import { Theme } from 'types/types';
+import { Theme } from 'types/styled';
 import { DarkMoonIcon, LightMoonIcon, WorldIcon, BarsIcon } from 'assets';
+import {
+  Box,
+  Container,
+  Row,
+  Column,
+  ClearButton,
+  CustomButton,
+  CustomIcon
+} from 'components/atoms';
 import {
   Nav,
   Navbar,
@@ -30,12 +37,17 @@ export const Header = (props: PropsType) => {
     <Navbar>
       <Container>
         <Row>
-          <Col xs={6} sm={10} xl={5} className='d-flex align-center'>
-            <Nav className='d-flex align-center'>
+          <Column xs={6} sm={10} xl={5} flex align='center'>
+            <Nav>
               <NavItem>
                 <ClearButton>
-                  <CustomIcon src={WorldIcon} width='45px' height='45px' />
-                  <span>EN</span>
+                  <CustomIcon
+                    src={WorldIcon}
+                    width='45px'
+                    height='45px'
+                    margin
+                  />
+                  <Box hideAt='lg'>EN</Box>
                 </ClearButton>
               </NavItem>
               <NavItem>
@@ -44,14 +56,15 @@ export const Header = (props: PropsType) => {
                     src={theme === Theme.Dark ? DarkMoonIcon : LightMoonIcon}
                     width='45px'
                     height='45px'
+                    margin
                   />
-                  <span>{theme.toUpperCase()} THEME</span>
+                  <Box hideAt='lg'>{theme.toUpperCase()} THEME</Box>
                 </ClearButton>
               </NavItem>
             </Nav>
-          </Col>
-          <Col xs={6} sm={2} xl={7} className='d-none d-xl-flex justify-end'>
-            <Nav className='d-flex align-center'>
+          </Column>
+          <Column xs={6} sm={2} xl={7} flex justify='end' hideAt='xl'>
+            <Nav>
               <NavItem>ABOUT</NavItem>
               <NavItem>PROJECTS</NavItem>
               <NavItem>CONTACT</NavItem>
@@ -59,16 +72,16 @@ export const Header = (props: PropsType) => {
                 <CustomButton>RESUME</CustomButton>
               </NavItem>
             </Nav>
-          </Col>
-          <Col className='d-flex d-xl-none justify-end'>
+          </Column>
+          <Column xs={6} sm={2} xl={7} flex justify='end' showAt='xl'>
             <ClearButton onClick={() => setNavCollapse(!navCollapse)}>
               <CustomIcon src={BarsIcon} width='50px' height='50px' />
             </ClearButton>
-          </Col>
+          </Column>
         </Row>
         {navCollapse && (
           <Row>
-            <Col className='position-relative'>
+            <Column position='relative'>
               <NavCollapse>
                 <NavCollapseItem>ABOUT</NavCollapseItem>
                 <NavCollapseItem>PROJECTS</NavCollapseItem>
@@ -77,7 +90,7 @@ export const Header = (props: PropsType) => {
                   <CustomButton>RESUME</CustomButton>
                 </NavCollapseItem>
               </NavCollapse>
-            </Col>
+            </Column>
           </Row>
         )}
       </Container>

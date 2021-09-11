@@ -4,6 +4,7 @@ interface ImagePropsType {
   width: string;
   height: string;
   src: string;
+  margin?: boolean;
 }
 
 export const CustomIcon = styled.div<ImagePropsType>`
@@ -11,7 +12,7 @@ export const CustomIcon = styled.div<ImagePropsType>`
   height: ${(props) => props.height};
   mask: ${(props) => `url(${props.src})`} no-repeat center;
   background-color: ${({ theme }) => theme.fontColor};
-  margin-right: 0.6em;
+  margin-right: ${(props) => props.margin && '0.6em'};
 `;
 
 export const CustomImage = styled.div<ImagePropsType>`

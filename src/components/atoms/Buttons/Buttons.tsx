@@ -1,19 +1,14 @@
 import React from 'react';
 import { ClassicSpinner } from 'components/atoms';
 import {
+  ButtonPropsType,
   BorderButtonWrapper,
   ScrollButtonChevron,
   ScrollButtonChevronsWrapper,
   ScrollButtonWrapper
-} from './Buttons.style';
+} from './Buttons.styles';
 
-type ButtonPropsType = React.HTMLAttributes<HTMLButtonElement>;
-
-interface BorderButtonPropsType extends ButtonPropsType {
-  isLoading?: boolean;
-}
-
-export const BorderButton = (props: BorderButtonPropsType) => {
+export const BorderButton = (props: ButtonPropsType) => {
   const { isLoading, children, ...restProps } = props;
   return (
     <BorderButtonWrapper disabled={isLoading} {...restProps}>

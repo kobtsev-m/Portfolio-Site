@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Container } from 'react-bootstrap';
 import { useWindowSize } from 'hooks/useWindowSize';
+import { TelegramIcon, GithubIcon } from 'assets';
+import { Container } from 'components/atoms';
 import { SideIcon, SideLine } from './SideNav.styles';
-
-import TelegramIcon from 'assets/icons/telegram-brands.svg';
-import GithubIcon from 'assets/icons/github-brands.svg';
 
 export const SideNav = () => {
   const [lineOffset, setLineOffset] = useState<number>(0);
