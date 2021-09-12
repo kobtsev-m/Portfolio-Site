@@ -29,9 +29,6 @@ interface PropsType {
 export const BlockHeader = (props: PropsType) => {
   const { title, orient, className } = props;
   const [{ scroll }, set] = useSpring(() => ({ scroll: 0 }));
-  const handleScroll = (e: React.WheelEventHandler<HTMLDivElement>) => {
-    console.log(e.currentTarget.scrollTop);
-  };
   // const handleScroll = useCallback(
   //   (e) => void set({ scroll: e.target.scrollTop / (window.innerHeight / 2) }),
   //   [set]
@@ -40,7 +37,6 @@ export const BlockHeader = (props: PropsType) => {
     <Row
       className={className}
       reverse={orient === 'right'}
-      onScroll={handleScroll}
     >
       <Column lg={6} xl={5}>
         <Wrapper align={orient}>
