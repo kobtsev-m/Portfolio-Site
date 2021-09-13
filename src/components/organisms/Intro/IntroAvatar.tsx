@@ -14,7 +14,7 @@ enum AnimationStatus {
 
 export const IntroAvatar = memo(() => {
   const [status, setStatus] = useState<AnimationStatus>(
-    AnimationStatus.Animation1
+    AnimationStatus.Stopped
   );
 
   const effects1 = useSprings(

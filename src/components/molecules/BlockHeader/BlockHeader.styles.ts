@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
 import { BlockTitle } from 'components/atoms';
-import { media } from 'styles/media';
 
 export const Title = styled(BlockTitle)`
   position: absolute;
@@ -10,7 +9,7 @@ export const Title = styled(BlockTitle)`
 
 export const Line = styled.div`
   position: absolute;
-  top: 2.8em;
+  top: 2.75rem;
   right: 0;
   width: 100%;
   height: 1px;
@@ -19,9 +18,8 @@ export const Line = styled.div`
 
 export const Wrapper = styled.div<{ align?: string }>`
   position: relative;
-  font-size: 100px;
-  height: 2.5em;
-  ${media('lg', 'height: 3.6em')};
+  font-size: 1rem;
+  height: 3.5rem;
   ${Title} {
     right: ${(props) => (props.align === 'right' ? 0 : '')};
     left: ${(props) => (props.align === 'left' ? 0 : '')};

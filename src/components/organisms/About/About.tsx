@@ -38,11 +38,11 @@ export const About = () => {
             <Box mt='0.3rem'>
               <TechnologiesList>
                 <TechnologiesListItem>JavaScript (ES6)</TechnologiesListItem>
+                <TechnologiesListItem>TypeScript</TechnologiesListItem>
                 <TechnologiesListItem>CSS, Sass</TechnologiesListItem>
                 <TechnologiesListItem>React</TechnologiesListItem>
-                <TechnologiesListItem>Next.js</TechnologiesListItem>
-                <TechnologiesListItem>Git</TechnologiesListItem>
                 <TechnologiesListItem>Bootstrap</TechnologiesListItem>
+                <TechnologiesListItem>Git</TechnologiesListItem>
                 <TechnologiesListItem opacity={40}>
                   Python 3
                 </TechnologiesListItem>

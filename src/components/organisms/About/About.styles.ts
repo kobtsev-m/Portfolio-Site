@@ -16,20 +16,24 @@ interface TechnologiesListItemPropsType {
   opacity?: number;
 }
 
+const getListIcon = (themeName: string) => {
+  return `url(${themeName === 'dark' ? CaretDarkIcon : CaretLightIcon})`;
+};
+
 export const TechnologiesListItem = styled.li<TechnologiesListItemPropsType>`
   position: relative;
   font-size: 0.24rem;
-  margin: 0 0 0.3rem 0.3rem;
+  margin: 0 0 0.3rem 0.4rem;
   &::before {
     content: '';
     position: absolute;
     top: 50%;
-    left: -0.3rem;
+    left: -0.4rem;
     transform: translateY(-50%);
     width: 0.2rem;
     height: 0.4rem;
-    background-image: ${({ theme }) =>
-      `url(${theme.name === 'dark' ? CaretDarkIcon : CaretLightIcon})`};
+    background: ${({ theme }) => getListIcon(theme.name)} center no-repeat;
+    background-size: cover;
     opacity: ${({ opacity }) => `${opacity}%`};
   }
 `;

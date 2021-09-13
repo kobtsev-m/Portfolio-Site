@@ -22,7 +22,6 @@ export const Intro = () => {
             flex
             align='center'
             justify={{ xs: 'center', md: 'start' }}
-            style={{ textAlign: 'center' }}
           >
             <IntroTextBlock>
               <MainTitle>Michael Kobtsev</MainTitle>

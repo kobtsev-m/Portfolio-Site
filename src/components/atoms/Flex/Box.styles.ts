@@ -48,8 +48,13 @@ const formatAlignValue = (
 };
 
 const mediaProp = (prop: string, rule: string | RulesType | undefined) => {
-  if (rule === undefined) {
-    return;
+  if (typeof rule === 'object') {
+    return mediaList(
+      (Object.keys(rule) as BreakpointType[]).reduce((acc, key) => {
+        acc[key] = mediaProp(prop, rule[key]) as string;
+        return acc;
+      }, {} as Record<BreakpointType, string>)
+    );
   }
   if (prop === 'align-items' || prop === 'justify-content') {
     return formatAlignValue(prop, rule);
@@ -57,12 +62,6 @@ const mediaProp = (prop: string, rule: string | RulesType | undefined) => {
   if (typeof rule === 'string') {
     return `${prop}: ${rule}`;
   }
-  return mediaList(
-    (Object.keys(rule) as BreakpointType[]).reduce((acc, key) => {
-      acc[key] = mediaProp(prop, rule[key]) as string;
-      return acc;
-    }, {} as Record<BreakpointType, string>)
-  );
 };
 
 export const Box = styled.div<BoxPropsType>`

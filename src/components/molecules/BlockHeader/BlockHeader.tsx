@@ -1,24 +1,8 @@
-import React, { useState, useCallback } from 'react';
-import { useSpring, animated, SpringValue } from 'react-spring';
+import React, { useState } from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
+import { Spring } from 'react-spring';
 import { Row, Column } from 'components/atoms';
 import { Title, Line, Wrapper } from './BlockHeader.styles';
-
-interface TextPropsType {
-  children?: React.ReactNode;
-  offset?: SpringValue<number>;
-  pos?: number;
-  start?: number;
-  end?: number;
-}
-
-function Text(props: TextPropsType) {
-  const { children, offset, pos, start, end } = props;
-  return (
-    <Title>
-      <animated.div>{children}</animated.div>
-    </Title>
-  );
-}
 
 interface PropsType {
   title: string;
@@ -27,33 +11,39 @@ interface PropsType {
 }
 
 export const BlockHeader = (props: PropsType) => {
+  const [visible, setVisible] = useState(null);
   const { title, orient, className } = props;
-  const [{ scroll }, set] = useSpring(() => ({ scroll: 0 }));
-  // const handleScroll = useCallback(
-  //   (e) => void set({ scroll: e.target.scrollTop / (window.innerHeight / 2) }),
-  //   [set]
-  // );
   return (
-    <Row
-      className={className}
-      reverse={orient === 'right'}
-    >
+    <Row className={className} reverse={orient === 'right'}>
       <Column lg={6} xl={5}>
         <Wrapper align={orient}>
-          <Text offset={scroll} pos={0} start={0} end={0.5}>
-            {title}
-          </Text>
-          <Text offset={scroll} pos={0} start={0} end={0.5}>
-            {title}
-          </Text>
-          <Text offset={scroll} pos={0} start={0} end={0.5}>
-            {title}
-          </Text>
+          <Spring
+            immediate={false}
+            reset={true}
+            from={{
+              opacity: 0,
+              transform: 'translateX(-300px)'
+            }}
+            to={{
+              opacity: 1,
+              transform: 'translateX(0)'
+            }}
+            reserve={!visible}
+          >
+            {(style) => <Title style={style as any}>{title}</Title>}
+          </Spring>
+          <Title>{title}</Title>
+          <Title>{title}</Title>
         </Wrapper>
       </Column>
       <Column lg={6} xl={7} hideAt='lg'>
         <Wrapper>
-          <Line />
+          <Line
+            onClick={() => {
+              console.log('bro');
+              setVisible(!visible);
+            }}
+          />
         </Wrapper>
       </Column>
     </Row>
