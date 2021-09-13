@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { InfoTextMedium } from 'components/atoms';
+import { InfoText } from 'components/atoms';
 import { media } from 'styles/media';
 import { CaretDarkIcon, CaretLightIcon } from 'assets';
 
-export const AboutText = styled(InfoTextMedium)`
+export const AboutText = styled(InfoText)`
   width: 100%;
   ${media('lg', 'width: 90%')}
 `;

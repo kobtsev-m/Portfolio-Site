@@ -6,6 +6,11 @@ import BarsIcon from './icons/bars-solid.svg';
 import WorldIcon from './icons/world.svg';
 import CaretDarkIcon from './icons/caret-dark.svg';
 import CaretLightIcon from './icons/caret-light.svg';
+import IntegralIcon from './icons/integral.svg';
+import AmdbIcon from './icons/amdb.svg';
+
+import IntegralPreviewImg from './img/integral-preview.png';
+import AmdbPreviewImg from './img/amdb-preview.png';
 
 import AvatarJson from './json/avatar1.min.json';
 
@@ -16,7 +21,11 @@ export {
   LightMoonIcon,
   BarsIcon,
   WorldIcon,
-  AvatarJson,
   CaretDarkIcon,
-  CaretLightIcon
+  CaretLightIcon,
+  IntegralIcon,
+  AmdbIcon,
+  IntegralPreviewImg,
+  AmdbPreviewImg,
+  AvatarJson
 };

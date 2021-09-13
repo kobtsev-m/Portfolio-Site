@@ -2,7 +2,7 @@ import {
   Box,
   Column,
   Container,
-  InfoTextLarge,
+  InfoText,
   MainSubTitle,
   MainTitle,
   Row,
@@ -15,7 +15,7 @@ export const Intro = () => {
   return (
     <IntroWrapper>
       <Container height={100}>
-        <Row height={100} mt={{ xs: '0.4rem', xl: '0' }}>
+        <Row height={100} mt={{ xs: '0.4rem', lg: '0' }}>
           <Column
             lg={6}
             xl={8}
@@ -29,11 +29,11 @@ export const Intro = () => {
                 React Front-end developer in search of interesting projects and
                 proposals
               </MainSubTitle>
-              <InfoTextLarge>
+              <InfoText>
                 I specialize on creating user interfaces & developing rich web
                 applications. I have experience working with big international
                 company & creating many demo projects in this area.
-              </InfoTextLarge>
+              </InfoText>
             </IntroTextBlock>
           </Column>
           <Column

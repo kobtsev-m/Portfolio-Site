@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
-import { Spring } from 'react-spring';
+import { Transition, animated, config } from 'react-spring';
 import { Row, Column } from 'components/atoms';
 import { Title, Line, Wrapper } from './BlockHeader.styles';
 
@@ -10,40 +10,52 @@ interface PropsType {
   className?: string;
 }
 
+const AnimatedTitle = animated(Title);
+
 export const BlockHeader = (props: PropsType) => {
-  const [visible, setVisible] = useState(null);
   const { title, orient, className } = props;
+  const translateFrom = `${orient === 'right' ? '' : '-'}200px`;
   return (
     <Row className={className} reverse={orient === 'right'}>
-      <Column lg={6} xl={5}>
-        <Wrapper align={orient}>
-          <Spring
-            immediate={false}
-            reset={true}
-            from={{
-              opacity: 0,
-              transform: 'translateX(-300px)'
-            }}
-            to={{
-              opacity: 1,
-              transform: 'translateX(0)'
-            }}
-            reserve={!visible}
-          >
-            {(style) => <Title style={style as any}>{title}</Title>}
-          </Spring>
-          <Title>{title}</Title>
-          <Title>{title}</Title>
-        </Wrapper>
+      <Column lg={6}>
+        <VisibilitySensor partialVisibility={true} minTopValue={50}>
+          {({ isVisible }) => (
+            <Wrapper align={orient}>
+              {[...Array(3)].map((_, i) => (
+                <Transition
+                  key={i}
+                  items={isVisible}
+                  reverse={isVisible}
+                  delay={i * 150}
+                  from={{
+                    opacity: 0,
+                    transform: `translateX(${translateFrom})`
+                  }}
+                  enter={{
+                    opacity: 1,
+                    transform: 'translateX(0)',
+                    config: config.slow
+                  }}
+                  leave={{
+                    opacity: 0,
+                    transform: `translateX(${translateFrom})`,
+                    config: { duration: 0 }
+                  }}
+                >
+                  {(styles, item) =>
+                    item && (
+                      <AnimatedTitle style={styles}>{title}</AnimatedTitle>
+                    )
+                  }
+                </Transition>
+              ))}
+            </Wrapper>
+          )}
+        </VisibilitySensor>
       </Column>
-      <Column lg={6} xl={7} hideAt='lg'>
+      <Column lg={6} hideAt='lg'>
         <Wrapper>
-          <Line
-            onClick={() => {
-              console.log('bro');
-              setVisible(!visible);
-            }}
-          />
+          <Line />
         </Wrapper>
       </Column>
     </Row>

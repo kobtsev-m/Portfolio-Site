@@ -18,7 +18,7 @@ export const ClassicSpinner = styled.div<SpinnerPropsType>`
   height: ${({ size }) => size};
   border-width: calc(0.15 * ${({ size }) => size});
   border-style: solid;
-  border-color: ${({ theme }) => theme.fontColor};
+  border-color: ${({ theme }) => theme.color.font};
   border-top: calc(0.15 * ${({ size }) => size}) solid transparent;
   border-radius: 50%;
   animation: ${spinAnimation} 1s linear 0s infinite;

@@ -8,10 +8,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background-color: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.fontColor};
-    font-family: ${({ theme }) => theme.fontMontserrat};
+    background-color: ${({ theme }) => theme.color.background};
+    color: ${({ theme }) => theme.color.font};
+    font-family: ${({ theme }) => theme.font.montserrat};
     font-size: 0.2rem;
+    overflow-x: hidden;
   }
   :root {
     ${media('xs', 'font-size: 75px')};

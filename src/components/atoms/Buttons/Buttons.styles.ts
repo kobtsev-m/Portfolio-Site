@@ -16,8 +16,8 @@ export const ClearButton = styled.button<ButtonPropsType>`
   justify-content: center;
   font-size: 24px;
   line-height: 32px;
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.fontColor};
+  background-color: ${({ theme }) => theme.color.background};
+  color: ${({ theme }) => theme.color.font};
   border: none;
   cursor: pointer;
   &:focus {
@@ -27,9 +27,9 @@ export const ClearButton = styled.button<ButtonPropsType>`
 
 export const CustomButton = styled(ClearButton)`
   font-weight: 600;
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => rgba(theme.accentColor, 0.7)};
-  border: 10px solid ${({ theme }) => rgba(theme.accentColor, 0.7)};
+  background-color: ${({ theme }) => theme.color.background};
+  color: ${({ theme }) => rgba(theme.color.accent, 0.7)};
+  border: 10px solid ${({ theme }) => rgba(theme.color.accent, 0.7)};
   padding: 0.6em 2em;
 `;
 
@@ -38,16 +38,16 @@ export const BorderButtonWrapper = styled(ClearButton)`
   line-height: 32px;
   width: 100%;
   height: 2.8em;
-  font-family: ${({ theme }) => theme.fontOpenSans};
+  font-family: ${({ theme }) => theme.font.openSans};
   font-weight: bold;
   letter-spacing: 0.1em;
-  color: ${({ theme }) => rgba(theme.fontColor, 0.7)};
-  border: 3px solid ${({ theme }) => rgba(theme.fontColor, 0.7)};
+  color: ${({ theme }) => rgba(theme.color.font, 0.7)};
+  border: 3px solid ${({ theme }) => rgba(theme.color.font, 0.7)};
   padding: 0 2em;
   cursor: pointer;
   &:hover:not(:disabled) {
-    background-color: ${({ theme }) => theme.fontColor};
-    color: ${({ theme }) => theme.background};
+    background-color: ${({ theme }) => theme.color.font};
+    color: ${({ theme }) => theme.color.background};
     transition: all 0.25s ease-in-out;
   }
 `;
@@ -86,7 +86,7 @@ export const ScrollButtonWrapper = styled.button`
   width: 30px;
   height: 50px;
   background: transparent;
-  border: 3px solid ${({ theme }) => theme.fontColor};
+  border: 3px solid ${({ theme }) => theme.color.font};
   border-radius: 50px;
   margin: 0 0 15px 15px;
   opacity: 0.8;
@@ -98,7 +98,7 @@ export const ScrollButtonWrapper = styled.button`
     left: 50%;
     width: 4px;
     height: 4px;
-    background: ${({ theme }) => rgba(theme.fontColor, 0.9)};
+    background: ${({ theme }) => rgba(theme.color.font, 0.9)};
     border-radius: 100%;
     margin-left: -2px;
     animation: ${scrollAnimation} 2s infinite;
@@ -118,7 +118,7 @@ export const ScrollButtonChevronsWrapper = styled.div`
 export const ScrollButtonChevron = styled.div`
   margin-top: -4px;
   position: relative;
-  border: solid ${({ theme }) => theme.fontColor};
+  border: solid ${({ theme }) => theme.color.font};
   border-width: 0 3px 3px 0;
   display: inline-block;
   width: 10px;

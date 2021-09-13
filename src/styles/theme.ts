@@ -3,34 +3,47 @@ import { DefaultTheme } from 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     name: 'dark' | 'light';
-    fontMontserrat: string;
-    fontOpenSans: string;
-    background: string;
-    fontColor: string;
-    accentColor: string;
-    secondaryColor: string;
+    font: {
+      montserrat: string;
+      openSans: string;
+    };
+    color: {
+      font: string;
+      background: string;
+      accent: string;
+      secondary: string;
+      layout: string;
+    };
   }
 }
 
 const theme = {
-  fontMontserrat: '"Montserrat", sans-serif',
-  fontOpenSans: '"Open Sans", sans-serif'
+  font: {
+    montserrat: '"Montserrat", sans-serif',
+    openSans: '"Open Sans", sans-serif'
+  }
 };
 
 export const darkTheme: DefaultTheme = {
   ...theme,
   name: 'dark',
-  background: '#1B1B1B',
-  fontColor: '#FFF',
-  accentColor: '#80AFD7',
-  secondaryColor: '#8D754F'
+  color: {
+    font: '#FFFFFF',
+    background: '#1B1B1B',
+    accent: '#80AFD7',
+    secondary: '#8D754F',
+    layout: '#202020'
+  }
 };
 
 export const lightTheme: DefaultTheme = {
   ...theme,
   name: 'light',
-  background: '#F4F4F4',
-  fontColor: '#1B1B1B',
-  accentColor: '#687349',
-  secondaryColor: '#8D754F'
+  color: {
+    font: '#1B1B1B',
+    background: '#F4F4F4',
+    accent: '#687349',
+    secondary: '#8D754F',
+    layout: '#FFFFFF'
+  }
 };

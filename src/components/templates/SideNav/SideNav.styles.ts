@@ -22,7 +22,7 @@ const FixedElement = css<FixedElementPropsType>`
 export const SideLine = styled.div`
   ${FixedElement};
   width: 1px;
-  background-color: ${({ theme }) => rgba(theme.fontColor, 0.8)};
+  background-color: ${({ theme }) => rgba(theme.color.font, 0.8)};
   z-index: 1100;
 `;
 

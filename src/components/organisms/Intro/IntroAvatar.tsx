@@ -38,7 +38,7 @@ export const IntroAvatar = memo(() => {
       to:
         status === AnimationStatus.Animation2
           ? async (next: any) => {
-              await next({ fill: hexToRgb(darkTheme.fontColor) });
+              await next({ fill: hexToRgb(darkTheme.color.font) });
               await next({ fill: avatar[i].fill });
             }
           : { fill: avatar[i].fill },
@@ -64,7 +64,7 @@ export const IntroAvatar = memo(() => {
           y='0'
           width='718'
           height='960'
-          fill={darkTheme.background}
+          fill={darkTheme.color.background}
         />
         {(status === AnimationStatus.Animation1 ? effects1 : effects2).map(
           (effect, i) => (

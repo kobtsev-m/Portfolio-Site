@@ -13,7 +13,7 @@ export const Line = styled.div`
   right: 0;
   width: 100%;
   height: 1px;
-  background-color: ${({ theme }) => rgba(theme.fontColor, 0.7)};
+  background-color: ${({ theme }) => rgba(theme.color.font, 0.7)};
 `;
 
 export const Wrapper = styled.div<{ align?: string }>`
@@ -26,14 +26,14 @@ export const Wrapper = styled.div<{ align?: string }>`
   }
   ${Title}:nth-of-type(3n + 1) {
     top: 0;
-    color: ${({ theme }) => rgba(theme.secondaryColor, 0.7)};
+    color: ${({ theme }) => rgba(theme.color.secondary, 0.7)};
   }
   ${Title}:nth-of-type(3n + 2) {
     top: 1em;
-    color: ${({ theme }) => rgba(theme.fontColor, 0.7)};
+    color: ${({ theme }) => rgba(theme.color.font, 0.7)};
   }
   ${Title}:nth-of-type(3n) {
     top: 2em;
-    color: ${({ theme }) => rgba(theme.accentColor, 0.9)};
+    color: ${({ theme }) => rgba(theme.color.accent, 0.9)};
   }
 `;

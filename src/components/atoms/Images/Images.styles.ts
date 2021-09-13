@@ -11,7 +11,7 @@ export const CustomIcon = styled.div<ImagePropsType>`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   mask: ${(props) => `url(${props.src})`} no-repeat center;
-  background-color: ${({ theme }) => theme.fontColor};
+  background-color: ${({ theme }) => theme.color.font};
   margin-right: ${(props) => props.margin && '0.6em'};
 `;
 

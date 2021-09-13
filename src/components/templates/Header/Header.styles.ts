@@ -9,7 +9,7 @@ export const Navbar = styled.header`
   width: 100%;
   height: 100px;
   ${media('md', 'height: 110px')};
-  background: ${({ theme }) => theme.background};
+  background: ${({ theme }) => theme.color.background};
   margin-top: 0;
   ${media('lg', 'margin-top: 0.2rem')};
   z-index: 1000;
@@ -34,7 +34,7 @@ export const NavCollapse = styled.nav`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  background: ${({ theme }) => theme.background};
+  background: ${({ theme }) => theme.color.background};
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0.15rem 0;
 `;

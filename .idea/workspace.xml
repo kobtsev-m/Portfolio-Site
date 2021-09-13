@@ -4,13 +4,25 @@
     <list default="true" id="9bc9e274-068b-4b70-a863-131a20c59f40" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/atoms/Flex/Box.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Flex/Box.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/Buttons/Buttons.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Buttons/Buttons.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/Images/Images.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Images/Images.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/Loaders/Loaders.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Loaders/Loaders.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/Text/Text.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Text/Text.styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/molecules/BlockHeader/BlockHeader.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/BlockHeader/BlockHeader.styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/molecules/BlockHeader/BlockHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/BlockHeader/BlockHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/organisms/About/About.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/About/About.styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/organisms/About/About.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/About/About.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisms/Intro/Intro.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/Intro/Intro.styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/organisms/Intro/Intro.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/Intro/Intro.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/organisms/Intro/IntroAvatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/Intro/IntroAvatar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organisms/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organisms/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/templates/Header/Header.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/templates/Header/Header.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/templates/SideNav/SideNav.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/templates/SideNav/SideNav.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/theme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,12 +53,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../integral-commodities-front" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/npm/node_modules/prettier" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Relax\AppData\Roaming\npm\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -80,6 +92,7 @@
       <workItem from="1631346332031" duration="4304000" />
       <workItem from="1631440483750" duration="21000" />
       <workItem from="1631464133340" duration="8843000" />
+      <workItem from="1631506974154" duration="16200000" />
     </task>
     <servers />
   </component>

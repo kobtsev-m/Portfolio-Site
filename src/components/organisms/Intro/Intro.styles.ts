@@ -3,7 +3,7 @@ import { media } from 'styles/media';
 
 export const IntroWrapper = styled.section`
   height: auto;
-  ${media('xl', 'height: calc(100vh - 140px - 0.2rem)')};
+  ${media('lg', 'height: calc(100vh - 140px - 0.2rem)')};
 `;
 
 export const IntroTextBlock = styled.div`
