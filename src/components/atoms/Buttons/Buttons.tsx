@@ -1,14 +1,14 @@
 import React from 'react';
 import { ClassicSpinner } from 'components/atoms';
 import {
-  ButtonPropsType,
+  ButtonProps,
   BorderButtonWrapper,
   ScrollButtonChevron,
   ScrollButtonChevronsWrapper,
   ScrollButtonWrapper
 } from './Buttons.styles';
 
-export const BorderButton = (props: ButtonPropsType) => {
+export const BorderButton = (props: ButtonProps) => {
   const { isLoading, children, ...restProps } = props;
   return (
     <BorderButtonWrapper disabled={isLoading} {...restProps}>
@@ -17,7 +17,7 @@ export const BorderButton = (props: ButtonPropsType) => {
   );
 };
 
-export const ScrollButton = (props: ButtonPropsType) => (
+export const ScrollButton = (props: ButtonProps) => (
   <ScrollButtonWrapper {...props}>
     <ScrollButtonChevronsWrapper>
       <ScrollButtonChevron />

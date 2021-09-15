@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useWindowSize } from 'hooks/useWindowSize';
 import { Theme } from 'types/styled';
 import { DarkMoonIcon, LightMoonIcon, WorldIcon, BarsIcon } from 'assets';
@@ -19,19 +19,19 @@ import {
   NavItem
 } from './Header.styles';
 
-interface PropsType {
+interface Props {
   theme: Theme;
   toggleTheme: () => void;
 }
 
-export const Header = (props: PropsType) => {
+export const Header: FC<Props> = (props) => {
   const { theme, toggleTheme } = props;
   const [navCollapse, setNavCollapse] = useState(false);
-  const windowSize = useWindowSize();
+  const { width: windowWidth } = useWindowSize();
 
   useEffect(() => {
     setNavCollapse(false);
-  }, [windowSize]);
+  }, [windowWidth]);
 
   return (
     <Navbar>

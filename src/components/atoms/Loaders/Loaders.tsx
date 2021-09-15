@@ -1,6 +1,6 @@
-import { SolarSpinnerWrapper, SpinnerPropsType } from './Loaders.styles';
+import { SolarSpinnerWrapper, SpinnerProps } from './Loaders.styles';
 
-export const SolarSpinner = (props: SpinnerPropsType) => (
+export const SolarSpinner = (props: SpinnerProps) => (
   <SolarSpinnerWrapper {...props}>
     <div className='solar-system'>
       <div className='earth-orbit orbit'>

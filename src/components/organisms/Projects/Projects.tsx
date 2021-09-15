@@ -1,36 +1,67 @@
-import { Container, Row } from 'components/atoms';
-import { BlockHeader, CommercialCard } from 'components/molecules';
-import {
-  IntegralIcon,
-  AmdbIcon,
-  IntegralPreviewImg,
-  AmdbPreviewImg
-} from 'assets';
+import { FC, useState } from 'react';
+import { animated, config, useTransition } from 'react-spring';
+import VisibilitySensor from 'react-visibility-sensor';
+import { useContainerOffset } from 'hooks/useContainerOffset';
+import { Box, Container } from 'components/atoms';
+import { BlockHeader } from 'components/molecules';
+import { ProjectsCommercial, ProjectsDemo } from 'components/organisms';
+import { InscriptionTitle } from './Projects.styles';
 
-export const Projects = () => {
+const AnimatedBox = animated(Box);
+
+export const Projects: FC = () => {
+  const [isCommercialVisible, setIsCommercialVisible] = useState(false);
+  const [isDemoVisible, setIsDemoVisible] = useState(false);
+  const { containerOffset, containerRef } = useContainerOffset();
+
+  const isInscriptionVisible = containerOffset >= 140;
+
+  const inscriptionAnimation = useTransition(
+    isCommercialVisible || isDemoVisible,
+    {
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+      reset: isCommercialVisible || isDemoVisible,
+      config: config.slow
+    }
+  );
+
   return (
     <section>
-      <Container mt='0.5rem' pb='20em'>
+      <Container ref={containerRef} mt='0.5rem'>
         <BlockHeader title='projects' orient='right' />
-        <Row mt='0.5rem'>
-          <CommercialCard
-            companyName='Integral Commodities'
-            companyIcon={IntegralIcon}
-            position='Front-end developer'
-            description='Commercial web site for one of the largest exporters company of Polymers, Fertilisers & Sulphur'
-            technologies={['Next.js', 'Google Maps API', 'Bootstrap 5']}
-            previewImg={IntegralPreviewImg}
-          />
-          <CommercialCard
-            companyName='AMDB'
-            companyIcon={AmdbIcon}
-            position='Full-stack developer'
-            description='Site for Institute of Biology for storage, editing, searching and analysis researches and experiments'
-            technologies={['Django', 'Bootstrap 4', 'JavaScript', 'Plotly.js']}
-            previewImg={AmdbPreviewImg}
-          />
-        </Row>
+        <VisibilitySensor
+          partialVisibility={true}
+          minTopValue={150}
+          onChange={(v) => isInscriptionVisible && setIsCommercialVisible(v)}
+        >
+          <ProjectsCommercial />
+        </VisibilitySensor>
+        <VisibilitySensor
+          partialVisibility={true}
+          minTopValue={300}
+          onChange={(v) => isInscriptionVisible && setIsDemoVisible(v)}
+        >
+          <ProjectsDemo />
+        </VisibilitySensor>
       </Container>
+      {isInscriptionVisible &&
+        inscriptionAnimation(
+          (styles, item) =>
+            item && (
+              <AnimatedBox
+                position='fixed'
+                top='50%'
+                right={`${containerOffset / 2}px`}
+                style={styles}
+              >
+                <InscriptionTitle>
+                  {isDemoVisible ? 'demo' : 'commercial'}
+                </InscriptionTitle>
+              </AnimatedBox>
+            )
+        )}
     </section>
   );
 };

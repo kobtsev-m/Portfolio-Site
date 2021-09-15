@@ -2,14 +2,14 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { rgba } from 'polished';
 
-type HtmlButtonPropsType = React.HTMLAttributes<HTMLButtonElement>;
+type HtmlButtonProps = React.HTMLAttributes<HTMLButtonElement>;
 
-export interface ButtonPropsType extends HtmlButtonPropsType {
+export interface ButtonProps extends HtmlButtonProps {
   width?: number;
   isLoading?: boolean;
 }
 
-export const ClearButton = styled.button<ButtonPropsType>`
+export const ClearButton = styled.button<ButtonProps>`
   width: ${({ width }) => `${width}%`};
   display: flex;
   align-items: center;
@@ -29,8 +29,9 @@ export const CustomButton = styled(ClearButton)`
   font-weight: 600;
   background-color: ${({ theme }) => theme.color.background};
   color: ${({ theme }) => rgba(theme.color.accent, 0.7)};
-  border: 10px solid ${({ theme }) => rgba(theme.color.accent, 0.7)};
   padding: 0.6em 2em;
+  border: 10px solid ${({ theme }) => rgba(theme.color.accent, 0.7)};
+  border-radius: 10px;
 `;
 
 export const BorderButtonWrapper = styled(ClearButton)`
@@ -45,6 +46,7 @@ export const BorderButtonWrapper = styled(ClearButton)`
   border: 3px solid ${({ theme }) => rgba(theme.color.font, 0.7)};
   padding: 0 2em;
   cursor: pointer;
+  border-radius: 10px;
   &:hover:not(:disabled) {
     background-color: ${({ theme }) => theme.color.font};
     color: ${({ theme }) => theme.color.background};

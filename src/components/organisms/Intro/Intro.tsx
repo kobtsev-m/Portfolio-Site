@@ -1,14 +1,11 @@
+import { Box, Container, Row, Column, ScrollButton } from 'components/atoms';
 import {
-  Box,
-  Column,
-  Container,
-  InfoText,
-  MainSubTitle,
-  MainTitle,
-  Row,
-  ScrollButton
-} from 'components/atoms';
-import { IntroTextBlock, IntroWrapper } from './Intro.styles';
+  IntroWrapper,
+  IntroTitle,
+  IntroSubTitle,
+  IntroDescription,
+  IntroTextBlock
+} from './Intro.styles';
 import { IntroAvatar } from './IntroAvatar';
 
 export const Intro = () => {
@@ -24,16 +21,16 @@ export const Intro = () => {
             justify={{ xs: 'center', md: 'start' }}
           >
             <IntroTextBlock>
-              <MainTitle>Michael Kobtsev</MainTitle>
-              <MainSubTitle>
+              <IntroTitle>Michael Kobtsev</IntroTitle>
+              <IntroSubTitle>
                 React Front-end developer in search of interesting projects and
                 proposals
-              </MainSubTitle>
-              <InfoText>
+              </IntroSubTitle>
+              <IntroDescription>
                 I specialize on creating user interfaces & developing rich web
                 applications. I have experience working with big international
                 company & creating many demo projects in this area.
-              </InfoText>
+              </IntroDescription>
             </IntroTextBlock>
           </Column>
           <Column

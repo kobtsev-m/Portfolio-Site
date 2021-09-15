@@ -4,7 +4,7 @@ import { Transition, animated, config } from 'react-spring';
 import { Row, Column } from 'components/atoms';
 import { Title, Line, Wrapper } from './BlockHeader.styles';
 
-interface PropsType {
+interface Props {
   title: string;
   orient: 'right' | 'left';
   className?: string;
@@ -12,7 +12,7 @@ interface PropsType {
 
 const AnimatedTitle = animated(Title);
 
-export const BlockHeader = (props: PropsType) => {
+export const BlockHeader = (props: Props) => {
   const { title, orient, className } = props;
   const translateFrom = `${orient === 'right' ? '' : '-'}200px`;
   return (

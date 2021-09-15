@@ -6,7 +6,5 @@ export * from './Images/Images.styles';
 export * from './Loaders/Loaders';
 export { ClassicSpinner } from './Loaders/Loaders.styles';
 
-export * from './Text/Text.styles';
-
 export * from './Flex/Flex.styles';
 export * from './Flex/Box.styles';

@@ -9,11 +9,11 @@ const spinAnimation = keyframes`
   }
 `;
 
-export interface SpinnerPropsType {
+export interface SpinnerProps {
   size: string;
 }
 
-export const ClassicSpinner = styled.div<SpinnerPropsType>`
+export const ClassicSpinner = styled.div<SpinnerProps>`
   width: ${({ size }) => size};
   height: ${({ size }) => size};
   border-width: calc(0.15 * ${({ size }) => size});
@@ -24,7 +24,7 @@ export const ClassicSpinner = styled.div<SpinnerPropsType>`
   animation: ${spinAnimation} 1s linear 0s infinite;
 `;
 
-export const SolarSpinnerWrapper = styled.div<SpinnerPropsType>`
+export const SolarSpinnerWrapper = styled.div<SpinnerProps>`
   .solar-system {
     width: ${({ size }) => size};
     height: ${({ size }) => size};

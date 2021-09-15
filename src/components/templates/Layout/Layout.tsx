@@ -5,11 +5,11 @@ import { darkTheme, lightTheme } from 'styles/theme';
 import { Theme } from 'types/styled';
 import { SideNav, Header } from 'components/templates';
 
-interface PropsType {
+interface Props {
   children: React.ReactNode;
 }
 
-export const Layout = (props: PropsType) => {
+export const Layout = (props: Props) => {
   const { children } = props;
   const [theme, setTheme] = useState<Theme>(Theme.Dark);
 

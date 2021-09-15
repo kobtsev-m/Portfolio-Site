@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
-import { BlockTitle } from 'components/atoms';
 
-export const Title = styled(BlockTitle)`
+export const Title = styled.h1`
   position: absolute;
+  font-family: ${({ theme }) => theme.font.openSans};
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.36rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   z-index: 900;
 `;
 

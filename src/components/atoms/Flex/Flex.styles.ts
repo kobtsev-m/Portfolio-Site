@@ -16,31 +16,68 @@ export const Container = styled(Box)`
   ${media('xxl', 'max-width: 1320px')}
 `;
 
-interface RowPropsType {
+interface RowProps {
   reverse?: boolean;
 }
 
-export const Row = styled(Box)<RowPropsType>`
+export const Row = styled(Box)<RowProps>`
   display: flex;
   flex-wrap: wrap;
   flex-direction: ${({ reverse }) => reverse && 'row-reverse'};
 `;
 
-const getColWidth = (span: number) => {
+const getColStyle = (span: number, gutter: string | undefined) => {
   let width = (span / 12) * 100;
-  return `width ${width}%`;
+  if (!gutter) {
+    return `width: ${width}%`;
+  }
+  let css = '';
+  for (let i = 1; i < Math.floor(12 / span) + 1; ++i) {
+    let ml0 = `calc(${gutter} / 2)`;
+    let mr0 = `calc(${gutter} / 2)`;
+    let ml1 = `calc(${gutter} / 2)`;
+    let mr1 = `calc(${gutter} / 2)`;
+    if (i === Math.floor(12 / span)) {
+      mr0 = '0';
+      ml1 = '0';
+    }
+    css += `
+    &:nth-of-type(${i}n) {
+      margin-left: ${ml0};
+      margin-right: ${mr0};
+    }
+    &:nth-of-type(${i}n + 1) {
+      margin-left: ${ml1};
+      margin-right: ${mr1};
+    }`;
+  }
+  let indents = Math.ceil(12 / span);
+  css += `width: calc(${width}% - ${gutter} * ${indents - 1} / ${indents})`;
+  return css;
 };
 
-type ColumnPropsType = {
-  [key in BreakpointType]?: number;
+type ColumnLayoutProps = {
+  [k in BreakpointType]?: number;
 };
 
-export const Column = styled(Box)<ColumnPropsType>`
+interface ColumnProps extends ColumnLayoutProps {
+  gutter?: string;
+}
+
+export const Column = styled(Box)<ColumnProps>`
   flex: 0 0 auto;
   width: 100%;
-  ${({ xs }) => xs && media('xs', getColWidth(xs))}
-  ${({ sm }) => sm && media('sm', getColWidth(sm))}
-  ${({ md }) => md && media('md', getColWidth(md))}
-  ${({ lg }) => lg && media('lg', getColWidth(lg))}
-  ${({ xl }) => xl && media('xl', getColWidth(xl))}
+
+  ${({ xs, gutter }) => xs && media('xs', `${getColStyle(xs, gutter)}`)}
+  ${({ sm, gutter }) => sm && media('sm', `${getColStyle(sm, gutter)}`)}
+  ${({ md, gutter }) => md && media('md', `${getColStyle(md, gutter)}`)}
+  ${({ lg, gutter }) => lg && media('lg', `${getColStyle(lg, gutter)}`)}
+  ${({ xl, gutter }) => xl && media('xl', `${getColStyle(xl, gutter)}`)}
+  
+  &:first-of-type {
+    margin-left: 0;
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
 `;

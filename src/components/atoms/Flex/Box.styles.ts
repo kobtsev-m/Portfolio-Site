@@ -4,8 +4,8 @@ import { media, mediaList } from 'styles/media';
 
 type AlignType = 'center' | 'start' | 'end' | 'between' | 'around';
 
-interface BoxPropsType {
-  position?: 'relative' | 'absolute';
+interface BoxProps {
+  position?: string;
   top?: string;
   right?: string;
   bottom?: string;
@@ -64,7 +64,7 @@ const mediaProp = (prop: string, rule: string | RulesType | undefined) => {
   }
 };
 
-export const Box = styled.div<BoxPropsType>`
+export const Box = styled.div<BoxProps>`
   position: ${({ position }) => position && position};
   top: ${({ top }) => top && top};
   right: ${({ right }) => right && right};

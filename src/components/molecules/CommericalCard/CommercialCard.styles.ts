@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
-import { Box, CardInfoText, CardSubTitle, CardTitle } from 'components/atoms';
+import { Box } from 'components/atoms';
 import { media } from 'styles/media';
 
-export const Wrapper = styled(Box)`
-  width: 100%;
-  background-color: ${({ theme }) => theme.color.layout};
-`;
-
-export const Title = styled(CardTitle)<{ icon?: string }>`
+export const CardTitle = styled.h3<{ icon?: string }>`
   position: relative;
+  color: ${({ theme }) => theme.color.font};
+  font-family: ${({ theme }) => theme.font.openSans};
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.4rem;
+  line-height: 0.54rem;
   padding: 0.25rem 0;
   margin-left: 1.3rem;
   &::before {
@@ -25,11 +26,22 @@ export const Title = styled(CardTitle)<{ icon?: string }>`
   }
 `;
 
-export const SubTitle = styled(CardSubTitle)`
+export const CardSubTitle = styled.h4`
+  color: ${({ theme }) => theme.color.font};
+  font-family: ${({ theme }) => theme.font.openSans};
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.35rem;
+  line-height: 0.54rem;
   margin: 0.2rem 0;
 `;
 
-export const InfoText = styled(CardInfoText)`
+export const CardDescription = styled.p`
+  color: ${({ theme }) => theme.color.font};
+  font-family: ${({ theme }) => theme.font.montserrat};
+  font-size: 0.28rem;
+  line-height: 0.44rem;
+  letter-spacing: 0.02em;
   margin-bottom: 0.2rem;
 `;
 
@@ -41,18 +53,60 @@ export const PreviewImage = styled.div<{ src?: string }>`
   background-position: center;
   background-repeat: no-repeat;
   background-size: 95% auto;
+  border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: filter ease-in-out 0.2s;
+  ${media('lg', 'border: none')};
+`;
+
+export const OverflowLink = styled.a`
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.5rem;
+  color: #fff;
+  font-family: ${({ theme }) => theme.font.openSans};
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(196, 196, 196, 0.2);
+  border-radius: 6px;
+  padding: 0.25rem;
+  opacity: 0;
+  transition: opacity ease-in-out 0.2s;
+  &:nth-child(2n + 1) {
+    transform: translate(-50%, calc(-50% - 0.5rem));
+  }
+  &:nth-child(2n) {
+    transform: translate(-50%, calc(-50% + 0.5rem));
+  }
 `;
 
 export const TechnologiesList = styled.ul`
-  display: flex;
   list-style: none;
+  display: flex;
   flex-direction: column;
   ${media('lg', 'flex-direction: row')}
 `;
 
 export const TechnologiesListItem = styled.li`
-  color: ${({ theme }) => rgba(theme.color.accent, 0.7)};
+  color: ${({ theme }) => rgba(theme.color.accent, 0.8)};
   margin: 0 0 0.2rem 0;
   ${media('lg', 'margin: 0 0.2rem 0 0')}
+`;
+
+export const Wrapper = styled(Box)`
+  width: 100%;
+  background-color: ${({ theme }) => theme.color.layout};
+  border-radius: 10px;
+  &:hover ${PreviewImage} {
+    filter: brightness(0.2);
+    transition: filter ease-in-out 0.2s;
+  }
+  &:hover ${OverflowLink} {
+    display: block;
+    opacity: 1;
+    transition: opacity ease-in-out 0.2s;
+  }
 `;

@@ -8,6 +8,8 @@ import CaretDarkIcon from './icons/caret-dark.svg';
 import CaretLightIcon from './icons/caret-light.svg';
 import IntegralIcon from './icons/integral.svg';
 import AmdbIcon from './icons/amdb.svg';
+import GithubLinkIcon from './icons/github-link.svg';
+import WebsiteLinkIcon from './icons/website-link.svg';
 
 import IntegralPreviewImg from './img/integral-preview.png';
 import AmdbPreviewImg from './img/amdb-preview.png';
@@ -25,6 +27,8 @@ export {
   CaretLightIcon,
   IntegralIcon,
   AmdbIcon,
+  GithubLinkIcon,
+  WebsiteLinkIcon,
   IntegralPreviewImg,
   AmdbPreviewImg,
   AvatarJson

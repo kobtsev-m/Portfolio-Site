@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 import { CustomIcon } from 'components/atoms';
 
-interface FixedElementPropsType {
+interface FixedElementProps {
   top?: string;
   right?: string;
   bottom?: string;
@@ -10,7 +10,7 @@ interface FixedElementPropsType {
   height: string;
 }
 
-const FixedElement = css<FixedElementPropsType>`
+const FixedElement = css<FixedElementProps>`
   position: fixed;
   top: ${(props) => props.top || ''};
   right: ${(props) => props.right || ''};
