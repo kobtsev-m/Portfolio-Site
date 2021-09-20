@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react';
-import { Theme } from 'types';
-import { useWindowSize } from 'hooks';
-import { Container } from 'components/atoms';
-import { Nav, NavCollapse } from 'components/molecules';
+import { Theme } from '~/types';
+import { useWindowSize } from '~/hooks';
+import { Container } from '~/components/atoms';
+import { Nav, NavCollapse } from '~/components/molecules';
 import { Navbar } from './Header.styles';
 
 interface HeaderProps {

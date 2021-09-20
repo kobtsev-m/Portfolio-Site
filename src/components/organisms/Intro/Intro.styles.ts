@@ -1,6 +1,20 @@
-import styled from 'styled-components';
-import { media } from 'styles';
+import styled, { css } from 'styled-components';
+import { media } from '~/styles';
 import { rgba } from 'polished';
+
+const NonBorderCss = css`
+  max-width: 80%;
+  text-align: left;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+`;
+
+const BorderCss = css`
+  border: 1px solid ${({ theme }) => theme.color.thin};
+  border-radius: 10px;
+  padding: 0.4rem;
+`;
 
 export const IntroWrapper = styled.section`
   height: auto;
@@ -8,9 +22,18 @@ export const IntroWrapper = styled.section`
 `;
 
 export const IntroTextBlock = styled.div`
-  max-width: 100%;
-  text-align: center;
-  ${media('lg', 'max-width: 80%; text-align: left')};
+  width: 100%;
+  ${BorderCss}
+  ${media('lg', NonBorderCss)};
+`;
+
+export const IntroAvatarBlock = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${BorderCss}
+  ${media('lg', NonBorderCss)};
 `;
 
 export const IntroTitle = styled.h1`

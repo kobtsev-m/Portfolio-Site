@@ -40,6 +40,7 @@ interface HRProps {
 }
 
 export const HR = styled.hr<HRProps>`
-  background-color: ${({ theme, color }) => theme.color[color]};
+  width: 100%;
   height: ${({ height }) => height ?? '1px'};
+  background-color: ${({ theme, color }) => theme.color[color]};
 `;

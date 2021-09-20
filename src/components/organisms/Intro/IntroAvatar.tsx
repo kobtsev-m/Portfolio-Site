@@ -1,10 +1,10 @@
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { animated, config, useSpring, useSprings } from 'react-spring';
-import { darkTheme } from 'styles';
-import { hexToRgb } from 'utils';
-import { AvatarJpgImg, AvatarJson as avatar } from 'assets';
-import { Box, BorderButton } from 'components/atoms';
+import { darkTheme } from '~/styles';
+import { hexToRgb } from '~/utils';
+import { AvatarJpgImg, AvatarJson as avatar } from '~/assets';
+import { Box, BorderButton } from '~/components/atoms';
 import { AvatarSvg, AvatarJpg } from './Intro.styles';
 
 enum AnimationStatus {
@@ -17,7 +17,7 @@ const AnimatedAvatarJpg = animated(AvatarJpg);
 
 export const IntroAvatar = memo(() => {
   const [status, setStatus] = useState<AnimationStatus>(
-    AnimationStatus.Animation1
+    AnimationStatus.Stopped
   );
   const { t } = useTranslation();
 

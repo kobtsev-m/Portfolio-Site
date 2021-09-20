@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { TFunction, useTranslation } from 'react-i18next';
-import { Row, Column } from 'components/atoms';
-import { DemoCard } from 'components/molecules';
+import { Row, Column } from '~/components/atoms';
+import { DemoCard } from '~/components/molecules';
 import { DemoTitle } from './ProjectsDemo.styles';
 
 const demoCards = (t: TFunction) => [
@@ -54,13 +54,13 @@ export const ProjectsDemo: FC = () => {
   return (
     <>
       <Row mt='0.5rem' align='center'>
-        <Column lg={8} hideAt='lg'>
+        <Column xs={3} sm={4} lg={8}>
           <hr />
         </Column>
-        <Column lg={8} flex justify='center'>
+        <Column xs={18} sm={16} lg={8} flex justify='center'>
           <DemoTitle>{t('projects.otherProjects')}</DemoTitle>
         </Column>
-        <Column lg={8} hideAt='lg'>
+        <Column xs={3} sm={4} lg={8}>
           <hr />
         </Column>
       </Row>

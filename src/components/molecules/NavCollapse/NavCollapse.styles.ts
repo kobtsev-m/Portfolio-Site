@@ -24,12 +24,12 @@ export const NavItem = styled.div`
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
   &:first-of-type {
     margin-top: 2vh;
   }
   &:last-of-type {
-    margin-top: 4vh;
+    margin-top: 3vh;
   }
   &:last-of-type button {
     font-size: 0.3rem;

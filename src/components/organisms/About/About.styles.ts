@@ -1,15 +1,35 @@
-import styled from 'styled-components';
-import { media } from 'styles';
-import { CaretDarkIcon, CaretLightIcon } from 'assets';
+import styled, { css } from 'styled-components';
+import { media } from '~/styles';
+import { CaretDarkIcon, CaretLightIcon } from '~/assets';
+
+const NonBorderCss = css`
+  width: 90%;
+  text-align: left;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+`;
+
+const BorderCss = css`
+  width: 100%;
+  border: 1px solid ${({ theme }) => theme.color.thin};
+  border-radius: 10px;
+  padding: 0.4rem;
+`;
 
 export const AboutText = styled.p`
-  width: 100%;
   color: ${({ theme }) => theme.color.font};
   font-family: ${({ theme }) => theme.font.montserrat};
   font-size: 0.28rem;
   line-height: 0.44rem;
   letter-spacing: 0.02em;
-  ${media('lg', 'width: 90%')}
+  ${BorderCss}
+  ${media('lg', NonBorderCss)};
+`;
+
+export const TechnologiesBlock = styled.div`
+  ${BorderCss}
+  ${media('lg', NonBorderCss)};
 `;
 
 export const TechnologiesList = styled.ul`

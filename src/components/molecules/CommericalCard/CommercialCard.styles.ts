@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
-import { Box } from 'components/atoms';
-import { media } from 'styles';
+import { Box } from '~/components/atoms';
+import { media } from '~/styles';
 
 export const CardTitle = styled.h3<{ icon?: string }>`
   position: relative;

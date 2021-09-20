@@ -1,13 +1,13 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CommercialCard } from 'components/molecules';
-import { Row } from 'components/atoms';
+import { CommercialCard } from '~/components/molecules';
+import { Row } from '~/components/atoms';
 import {
   AmdbIcon,
   AmdbPreviewImg,
   IntegralIcon,
   IntegralPreviewImg
-} from 'assets';
+} from '~/assets';
 
 export const ProjectsCommercial: FC = () => {
   const { t } = useTranslation();

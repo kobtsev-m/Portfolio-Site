@@ -5,7 +5,7 @@ import {
   CustomInput,
   CustomTextarea,
   CustomButton
-} from 'components/atoms';
+} from '~/components/atoms';
 
 export const ContactForm: FC = () => {
   const { t } = useTranslation();

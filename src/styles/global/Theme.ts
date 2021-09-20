@@ -15,6 +15,7 @@ declare module 'styled-components' {
       layout: string;
       grey: string;
       lightGrey: string;
+      thin: string;
     };
   }
 }
@@ -36,7 +37,8 @@ export const darkTheme: DefaultTheme = {
     secondary: '#8D754F',
     layout: '#202020',
     grey: 'rgba(255, 255, 255, 0.2)',
-    lightGrey: 'rgba(255, 255, 255, 0.5)'
+    lightGrey: 'rgba(255, 255, 255, 0.5)',
+    thin: 'rgba(255, 255, 255, 0.1)'
   }
 };
 
@@ -50,6 +52,7 @@ export const lightTheme: DefaultTheme = {
     secondary: '#8D754F',
     layout: '#FFFFFF',
     grey: 'rgba(27, 27, 27, 0.2)',
-    lightGrey: 'rgba(27, 27, 27, 0.5)'
+    lightGrey: 'rgba(27, 27, 27, 0.5)',
+    thin: 'rgba(27, 27, 27, 0.1)'
   }
 };

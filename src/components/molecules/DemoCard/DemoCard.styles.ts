@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
-import { media } from 'styles';
-import { Box } from 'components/atoms';
+import { media } from '~/styles';
+import { Box } from '~/components/atoms';
 
 export const Wrapper = styled(Box)`
   width: 100%;

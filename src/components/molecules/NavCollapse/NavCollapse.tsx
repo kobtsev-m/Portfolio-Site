@@ -2,7 +2,7 @@ import { Dispatch, FC, SetStateAction } from 'react';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import { animated, config, useSpring } from 'react-spring';
-import { Box, CustomButton } from 'components/atoms';
+import { Box, CustomButton } from '~/components/atoms';
 import { Wrapper, NavItem } from './NavCollapse.styles';
 
 interface NavCollapseProps {
@@ -17,7 +17,7 @@ export const NavCollapse: FC<NavCollapseProps> = (props) => {
   const { t } = useTranslation();
 
   const effect = useSpring({
-    transform: navCollapse ? 'translateY(0vh)' : 'translateY(100vh)',
+    transform: navCollapse ? 'translateX(0vw)' : 'translateX(100vw)',
     config: config.slow
   });
 

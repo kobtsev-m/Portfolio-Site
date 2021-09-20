@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { media } from 'styles';
-import { Breakpoint } from 'types';
+import { media, mediaProperty } from '~/styles';
+import { Breakpoint, Ruleset } from '~/types';
 import { Box } from './Box.styles';
 
 export const Container = styled(Box)`
@@ -17,13 +17,13 @@ export const Container = styled(Box)`
 `;
 
 interface RowProps {
-  reverse?: boolean;
+  direction?: Ruleset | string;
 }
 
 export const Row = styled(Box)<RowProps>`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: ${({ reverse }) => reverse && 'row-reverse'};
+  ${({ direction }) => mediaProperty('flex-direction', direction)};
 `;
 
 const getColStyle = (span: number, gutter: string | undefined) => {

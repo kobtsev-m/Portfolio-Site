@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, CustomIcon } from 'components/atoms';
+import { Box, CustomIcon } from '~/components/atoms';
 import {
   TechnologiesListItem,
   TechnologiesList,
@@ -8,7 +8,7 @@ import {
   IconsHeader,
   Wrapper
 } from './DemoCard.styles';
-import { GithubLinkIcon, WebsiteLinkIcon } from 'assets';
+import { GithubLinkIcon, WebsiteLinkIcon } from '~/assets';
 
 interface DemoCardProps {
   projectName: string;

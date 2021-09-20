@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import { useWindowSize } from 'hooks';
+import { useWindowSize } from '~/hooks';
 
 export const useScrollTrigger = () => {
   const [isUnder, setIsUnder] = useState(false);

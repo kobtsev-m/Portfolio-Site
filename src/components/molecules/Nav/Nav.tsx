@@ -1,8 +1,8 @@
 import { Dispatch, FC, SetStateAction } from 'react';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
-import { BarsIcon, WorldIcon } from 'assets';
-import { Theme } from 'types';
+import { BarsIcon, WorldIcon } from '~/assets';
+import { Theme } from '~/types';
 import {
   Box,
   ClearButton,
@@ -11,7 +11,7 @@ import {
   CustomIcon,
   Row,
   ThemeToggleButton
-} from 'components/atoms';
+} from '~/components/atoms';
 import { NavItem, Wrapper } from './Nav.styles';
 
 interface NavProps {

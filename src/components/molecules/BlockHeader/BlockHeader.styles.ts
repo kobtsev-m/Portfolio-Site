@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
-import { media } from 'styles';
+import { media } from '~/styles';
 
 export const Title = styled.h1`
   position: absolute;

@@ -1,14 +1,22 @@
 import { FC } from 'react';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
-import { Box, Container, Row, Column, ScrollButton } from 'components/atoms';
+import {
+  Box,
+  Container,
+  Row,
+  Column,
+  ScrollButton,
+  HR
+} from '~/components/atoms';
 import { IntroAvatar } from './IntroAvatar';
 import {
   IntroWrapper,
   IntroTitle,
   IntroSubTitle,
   IntroDescription,
-  IntroTextBlock
+  IntroTextBlock,
+  IntroAvatarBlock
 } from './Intro.styles';
 
 export const Intro: FC = () => {
@@ -16,7 +24,7 @@ export const Intro: FC = () => {
   return (
     <IntroWrapper>
       <Container height={100}>
-        <Row height={100} mt={{ xs: '0.4rem', lg: '0' }}>
+        <Row height={100} mt={{ xs: '0.3rem', lg: '0' }}>
           <Column
             lg={12}
             xl={16}
@@ -38,7 +46,9 @@ export const Intro: FC = () => {
             justify={{ xs: 'center', lg: 'end' }}
             mt={{ xs: '2.5em', lg: '0' }}
           >
-            <IntroAvatar />
+            <IntroAvatarBlock>
+              <IntroAvatar />
+            </IntroAvatarBlock>
           </Column>
         </Row>
       </Container>
