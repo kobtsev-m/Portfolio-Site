@@ -1,6 +1,5 @@
-import { ReactNode, useState, useEffect } from 'react';
+import { FC, ReactNode, useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { withTranslation } from 'react-i18next';
 import { darkTheme, GlobalStyle, lightTheme } from 'styles';
 import { Theme } from 'types';
 import { SideNav, Header } from 'components/templates';
@@ -10,7 +9,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-export const Layout = withTranslation()((props: LayoutProps) => {
+export const Layout:FC<LayoutProps> = (props) => {
   const { children } = props;
   const [theme, setTheme] = useState(Theme.Dark);
 
@@ -34,4 +33,4 @@ export const Layout = withTranslation()((props: LayoutProps) => {
       <main>{children}</main>
     </ThemeProvider>
   );
-});
+};
