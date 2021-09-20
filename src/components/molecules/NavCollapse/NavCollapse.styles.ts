@@ -25,9 +25,6 @@ export const NavItem = styled.div`
   text-transform: uppercase;
   cursor: pointer;
   margin-bottom: 1vh;
-  &:first-of-type {
-    margin-top: 2vh;
-  }
   &:last-of-type {
     margin-top: 3vh;
   }
