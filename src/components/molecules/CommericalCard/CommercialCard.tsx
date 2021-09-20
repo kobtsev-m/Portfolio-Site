@@ -38,8 +38,8 @@ export const CommercialCard: FC<CommercialCardProps> = (props) => {
 
   return (
     <Wrapper mb='0.5rem'>
-      <Row>
-        <Column lg={12} p={{ xs: '0.5rem 0.5rem 0 0.5rem', lg: '0.5rem' }}>
+      <Row p='0.5rem'>
+        <Column lg={12} pr={{ xs: '0', lg: '0.5rem' }}>
           <CardTitle icon={companyIcon}>{companyName}</CardTitle>
           <CardSubTitle>{position}</CardSubTitle>
           <CardDescription>{description}</CardDescription>
@@ -55,7 +55,12 @@ export const CommercialCard: FC<CommercialCardProps> = (props) => {
             )}
           </Box>
         </Column>
-        <Column lg={12} position='relative' height={100} p='0.5rem'>
+        <Column
+          lg={12}
+          position='relative'
+          pl={{ xs: '0', lg: '0.5rem' }}
+          pt={{ xs: '0.25rem', lg: '0' }}
+        >
           <PreviewImage src={previewImg} />
           <Box position='absolute' top='0' left='0' width={100} height={100}>
             <OverflowLink href={siteLink} target='_blank' rel='noreferrer'>

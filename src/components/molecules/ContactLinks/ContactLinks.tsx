@@ -15,12 +15,12 @@ export const ContactLinks: FC = () => {
           rel='noreferrer'
           target='_blank'
         >
-          <Box position='absolute' top='0.8rem' left='0.4rem'>
+          <Box position='absolute' top='0.8rem' left='0.2rem'>
             <CustomIcon src={MailLinkIcon} width='1rem' height='1rem' />
           </Box>
         </a>
         <a href='https://wa.me/79134600184' rel='noreferrer' target='_blank'>
-          <Box position='absolute' top='0.6rem' right='0.3rem'>
+          <Box position='absolute' top='0.6rem' right='0.45rem'>
             <CustomIcon
               src={WhatsappLinkIcon}
               width='0.8rem'
@@ -29,7 +29,7 @@ export const ContactLinks: FC = () => {
           </Box>
         </a>
         <a href='https://t.me/kobtsev_m' rel='noreferrer' target='_blank'>
-          <Box position='absolute' top='2rem' left='40%'>
+          <Box position='absolute' top='2rem' left='35%'>
             <CustomIcon
               src={TelegramLinkIcon}
               width='1.2rem'

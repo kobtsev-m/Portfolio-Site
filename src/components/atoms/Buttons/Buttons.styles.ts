@@ -71,10 +71,10 @@ export interface CustomButtonProps extends ButtonProps {
   color?: keyof DefaultTheme['color'];
   size?: 'sm' | 'lg';
   disabled?: boolean;
-  hideCursor?: boolean;
+  submitted?: boolean;
 }
 
-export const CustomButtonWrapper = styled(ClearButton)<CustomButtonProps>`
+export const CustomButton = styled(ClearButton)<CustomButtonProps>`
   position: relative;
   font-weight: 600;
   background: transparent;
@@ -111,13 +111,13 @@ export const CustomButtonWrapper = styled(ClearButton)<CustomButtonProps>`
     css`
       border-width: 10px;
     `}
-  ${({ hideCursor }) =>
-    hideCursor &&
+  ${({ disabled }) =>
+    disabled &&
     css`
       cursor: default;
     `}
-  ${({ hideCursor, color }) =>
-    !hideCursor &&
+  ${({ disabled, color }) =>
+    !disabled &&
     color &&
     css`
       &:hover {
@@ -126,8 +126,8 @@ export const CustomButtonWrapper = styled(ClearButton)<CustomButtonProps>`
         transition: all 0.25s ease-in-out;
       }
     `}
-  ${({ hideCursor, color }) =>
-    !hideCursor &&
+  ${({ disabled, color }) =>
+    !disabled &&
     !color &&
     css`
       &:hover {
@@ -136,13 +136,22 @@ export const CustomButtonWrapper = styled(ClearButton)<CustomButtonProps>`
         transition: all 0.25s ease-in-out;
       }
     `}
+  ${({ submitted }) =>
+    submitted &&
+    css`
+      cursor: default;
+    `}
+`;
+
+export const SubmitButtonWrapper = styled(CustomButton)`
+  height: 0.7rem;
 `;
 
 export const BorderButtonWrapper = styled(ClearButton)`
   font-size: 0.2rem;
   line-height: 0.32rem;
   width: 100%;
-  height: 2.8em;
+  height: 3em;
   font-family: ${({ theme }) => theme.font.openSans};
   font-weight: bold;
   letter-spacing: 0.1em;
@@ -151,7 +160,7 @@ export const BorderButtonWrapper = styled(ClearButton)`
   border: 3px solid ${({ theme }) => rgba(theme.color.font, 0.7)};
   border-radius: 10px;
   cursor: pointer;
-  padding: 1em 2em;
+  padding: 0 2em;
   transition: all 0.25s ease-in-out;
   &:hover:not(:disabled) {
     background: ${({ theme }) => theme.color.font};

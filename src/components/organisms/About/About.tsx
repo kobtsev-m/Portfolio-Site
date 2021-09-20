@@ -3,14 +3,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Element } from 'react-scroll';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Transition, animated, config } from 'react-spring';
-import {
-  Box,
-  Container,
-  Row,
-  Column,
-  CustomButton,
-  HR
-} from '~/components/atoms';
+import { Box, Container, Row, Column, CustomButton } from '~/components/atoms';
 import { BlockHeader } from '~/components/molecules';
 import {
   AboutText,
@@ -21,7 +14,7 @@ import {
 
 const technologies = [
   { name: 'JavaScript (ES6)', importance: 1 },
-  { name: 'typescript', importance: 1 },
+  { name: 'Typescript', importance: 1 },
   { name: 'Css / Sass', importance: 1 },
   { name: 'React', importance: 1 },
   { name: 'Git', importance: 1 },
@@ -51,7 +44,7 @@ export const About: FC = () => {
               onChange={(v) => (v ? setIsVisible(true) : {})}
             >
               <TechnologiesBlock>
-                <CustomButton width={100} disabled={true} hideCursor={true}>
+                <CustomButton width={100} disabled={true}>
                   {t('about.technologies')}
                 </CustomButton>
                 <Box mt='0.3rem'>

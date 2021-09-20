@@ -38,7 +38,7 @@ export const Nav: FC<NavProps> = (props) => {
               <Box mr={{ xs: '0', lg: '0.2rem' }}>
                 <CustomIcon src={WorldIcon} width='45px' height='45px' />
               </Box>
-              <Box hideAt='lg'>{t(`nav.${i18n.language}`)}</Box>
+              <Box hideAt='lg'>{i18n.language === 'en' ? 'EN' : 'RU'}</Box>
             </ClearButton>
           </NavItem>
           <NavItem>
@@ -49,17 +49,17 @@ export const Nav: FC<NavProps> = (props) => {
       <Column xs={12} sm={4} xl={14} flex justify='end' hideAt='xl'>
         <Wrapper>
           <NavItem>
-            <Link to='about' offset={-100} smooth={true}>
+            <Link to='about' offset={-100}>
               {t('nav.about')}
             </Link>
           </NavItem>
           <NavItem>
-            <Link to='projects' offset={-100} smooth={true}>
+            <Link to='projects' offset={-100}>
               {t('nav.projects')}
             </Link>
           </NavItem>
           <NavItem>
-            <Link to='contact' offset={-100} smooth={true}>
+            <Link to='contact' offset={-100}>
               {t('nav.contact')}
             </Link>
           </NavItem>

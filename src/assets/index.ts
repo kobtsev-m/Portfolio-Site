@@ -13,6 +13,7 @@ import WebsiteLinkIcon from './icons/website-link.svg';
 import MailLinkIcon from './icons/mail-link.svg';
 import WhatsappLinkIcon from './icons/whatsapp-link.svg';
 import TelegramLinkIcon from './icons/telegram-link.svg';
+import CheckIcon from './icons/check-solid.svg';
 
 import AvatarJpgImg from './img/avatar.jpg';
 import IntegralPreviewImg from './img/integral-preview.png';
@@ -38,6 +39,7 @@ export {
   MailLinkIcon,
   WhatsappLinkIcon,
   TelegramLinkIcon,
+  CheckIcon,
   AvatarJpgImg,
   IntegralPreviewImg,
   AmdbPreviewImg,

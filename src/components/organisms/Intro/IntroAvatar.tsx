@@ -17,7 +17,7 @@ const AnimatedAvatarJpg = animated(AvatarJpg);
 
 export const IntroAvatar = memo(() => {
   const [status, setStatus] = useState<AnimationStatus>(
-    AnimationStatus.Stopped
+    AnimationStatus.Animation1
   );
   const { t } = useTranslation();
 

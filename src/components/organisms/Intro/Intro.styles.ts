@@ -1,20 +1,6 @@
-import styled, { css } from 'styled-components';
-import { media } from '~/styles';
+import styled from 'styled-components';
+import { media, mobileThinBorderCss } from '~/styles';
 import { rgba } from 'polished';
-
-const NonBorderCss = css`
-  max-width: 80%;
-  text-align: left;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-`;
-
-const BorderCss = css`
-  border: 1px solid ${({ theme }) => theme.color.thin};
-  border-radius: 10px;
-  padding: 0.4rem;
-`;
 
 export const IntroWrapper = styled.section`
   height: auto;
@@ -23,8 +9,8 @@ export const IntroWrapper = styled.section`
 
 export const IntroTextBlock = styled.div`
   width: 100%;
-  ${BorderCss}
-  ${media('lg', NonBorderCss)};
+  ${media('md', 'width: 80%')};
+  ${mobileThinBorderCss};
 `;
 
 export const IntroAvatarBlock = styled.div`
@@ -32,8 +18,7 @@ export const IntroAvatarBlock = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${BorderCss}
-  ${media('lg', NonBorderCss)};
+  ${mobileThinBorderCss};
 `;
 
 export const IntroTitle = styled.h1`
@@ -66,14 +51,16 @@ export const AvatarSvg = styled.svg`
   width: 100%;
   height: 400px;
   border-radius: 10px;
+  mask-size: contain;
   ${media('lg', 'height: 550px')}
 `;
 
 export const AvatarJpg = styled.div<{ src: string }>`
+  opacity: 0;
   width: 100%;
   height: 400px;
   border-radius: 10px;
-  background-image: ${({ src }) => `url(${src})`};
-  background-size: contain;
+  background: ${({ src }) => `url(${src})`} center no-repeat;
+  background-size: cover;
   ${media('lg', 'height: 550px')};
 `;

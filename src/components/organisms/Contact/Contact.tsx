@@ -41,7 +41,7 @@ export const Contact: FC = () => {
                     <CardSeparatorText>{t('contact.or')}</CardSeparatorText>
                   </Column>
                   <Column md={2} pl='0.5rem' pr='0.5rem' showAt='md'>
-                    <HR color='thin' height='1px' />
+                    <HR color='thin' height='1.5px' />
                   </Column>
                   <Column md={11} p='0.5rem'>
                     <ContactLinks />

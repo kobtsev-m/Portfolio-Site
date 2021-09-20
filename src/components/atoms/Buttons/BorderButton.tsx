@@ -6,7 +6,7 @@ export const BorderButton: FC<ButtonProps> = (props) => {
   const { isLoading, children, ...restProps } = props;
   return (
     <BorderButtonWrapper disabled={isLoading} {...restProps}>
-      {isLoading ? <ClassicSpinner size='1em' /> : children}
+      {isLoading ? <ClassicSpinner size='15px' /> : children}
     </BorderButtonWrapper>
   );
 };
