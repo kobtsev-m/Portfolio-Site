@@ -12,7 +12,7 @@ export const Wrapper = styled(Box)`
 
 export const IconsHeader = styled.div`
   position: relative;
-  height: 0.7rem;
+  height: 60px;
 `;
 
 export const CardTitle = styled.h4`

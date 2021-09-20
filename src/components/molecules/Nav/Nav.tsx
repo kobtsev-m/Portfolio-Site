@@ -38,7 +38,7 @@ export const Nav: FC<NavProps> = (props) => {
               <Box mr={{ xs: '0', lg: '0.2rem' }}>
                 <CustomIcon src={WorldIcon} width='45px' height='45px' />
               </Box>
-              <Box hideAt='lg'>{i18n.language}</Box>
+              <Box hideAt='lg'>{t(`nav.${i18n.language}`)}</Box>
             </ClearButton>
           </NavItem>
           <NavItem>

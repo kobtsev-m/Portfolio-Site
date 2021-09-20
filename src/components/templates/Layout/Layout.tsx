@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState, useEffect } from 'react';
+import { FC, ReactNode, useState, useEffect, Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, GlobalStyle, lightTheme } from 'styles';
 import { Theme } from 'types';
@@ -9,7 +9,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-export const Layout:FC<LayoutProps> = (props) => {
+export const Layout: FC<LayoutProps> = (props) => {
   const { children } = props;
   const [theme, setTheme] = useState(Theme.Dark);
 
@@ -26,11 +26,13 @@ export const Layout:FC<LayoutProps> = (props) => {
   }, []);
 
   return (
-    <ThemeProvider theme={theme === Theme.Dark ? darkTheme : lightTheme}>
-      <GlobalStyle />
-      <SideNav />
-      <Header theme={theme} toggleTheme={toggleTheme} />
-      <main>{children}</main>
-    </ThemeProvider>
+    <Suspense fallback='Loading...'>
+      <ThemeProvider theme={theme === Theme.Dark ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        <SideNav />
+        <Header theme={theme} toggleTheme={toggleTheme} />
+        <main>{children}</main>
+      </ThemeProvider>
+    </Suspense>
   );
 };

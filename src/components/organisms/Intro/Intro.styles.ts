@@ -46,9 +46,11 @@ export const AvatarSvg = styled.svg`
   ${media('lg', 'height: 550px')}
 `;
 
-export const AvatarJpg = styled.img`
+export const AvatarJpg = styled.div<{ src: string }>`
   width: 100%;
   height: 400px;
   border-radius: 10px;
+  background-image: ${({ src }) => `url(${src})`};
+  background-size: contain;
   ${media('lg', 'height: 550px')};
 `;

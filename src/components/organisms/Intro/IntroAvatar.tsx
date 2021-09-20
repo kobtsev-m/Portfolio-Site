@@ -46,7 +46,7 @@ export const IntroAvatar = memo(() => {
               await next({ fill: avatar[i].fill });
             }
           : { fill: avatar[i].fill },
-      delay: 300 + i * 2,
+      delay: 300 + i * 4,
       config: { ...config.gentle, duration: 1500 },
       onRest: () => {
         if (i === avatar.length - 1) {
@@ -81,7 +81,7 @@ export const IntroAvatar = memo(() => {
           )
         )}
       </AvatarSvg>
-      <Box position='absolute' top='0' left='0'>
+      <Box position='absolute' top='0' left='0' width={100}>
         <AnimatedAvatarJpg src={AvatarJpgImg} style={effects3} />
       </Box>
       <Box mt='0.5em'>

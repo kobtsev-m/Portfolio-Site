@@ -2,11 +2,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Element } from 'react-scroll';
 import { Column, Container, Row, HR } from 'components/atoms';
-import {
-  BlockHeader,
-  ContactForm,
-  ContactLinks
-} from 'components/molecules';
+import { BlockHeader, ContactForm, ContactLinks } from 'components/molecules';
 import {
   Card,
   CardBody,
@@ -38,10 +34,10 @@ export const Contact: FC = () => {
                   <Column md={2} hideAt='md'>
                     <CardSeparator />
                     <CardSeparator />
-                    <CardSeparatorText>OR</CardSeparatorText>
+                    <CardSeparatorText>{t('contact.or')}</CardSeparatorText>
                   </Column>
                   <Column md={2} pl='0.5rem' pr='0.5rem' showAt='md'>
-                    <HR color='grey' height='3px' />
+                    <HR color='grey' height='1.5px' />
                   </Column>
                   <Column md={11} p='0.5rem'>
                     <ContactLinks />

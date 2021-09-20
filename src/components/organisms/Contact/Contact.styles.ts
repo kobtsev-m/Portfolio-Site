@@ -68,4 +68,5 @@ export const CardSeparatorText = styled.div`
   font-size: 0.2rem;
   line-height: 0.24rem;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 `;

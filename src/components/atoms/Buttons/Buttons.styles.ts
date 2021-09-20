@@ -83,6 +83,7 @@ export const CustomButtonWrapper = styled(ClearButton)<CustomButtonProps>`
   overflow: hidden;
   z-index: 1;
   padding: 0.6em 2em;
+  transition: all 0.25s ease-in-out;
   ${({ color }) =>
     color &&
     css`
@@ -90,7 +91,7 @@ export const CustomButtonWrapper = styled(ClearButton)<CustomButtonProps>`
       border-color: ${({ theme }) => rgba(theme.color[color], 0.7)};
     `}
   ${({ color }) =>
-    color ||
+    !color &&
     css`
       color: ${({ theme }) => rgba(theme.color.accent, 0.7)};
       border-color: ${({ theme }) => rgba(theme.color.accent, 0.7)};
@@ -115,14 +116,24 @@ export const CustomButtonWrapper = styled(ClearButton)<CustomButtonProps>`
     css`
       cursor: default;
     `}
-  ${({ hideCursor }) =>
+  ${({ hideCursor, color }) =>
     !hideCursor &&
+    color &&
     css`
       &:hover {
         color: ${({ theme }) => theme.color.background};
+        background-color: ${({ theme }) => theme.color[color]};
+        transition: all 0.25s ease-in-out;
       }
-      &:hover ${CustomButtonSpan} {
-        transform: translateX(0);
+    `}
+  ${({ hideCursor, color }) =>
+    !hideCursor &&
+    !color &&
+    css`
+      &:hover {
+        color: ${({ theme }) => theme.color.background};
+        background-color: ${({ theme }) => theme.color.accent};
+        transition: all 0.25s ease-in-out;
       }
     `}
 `;
@@ -135,13 +146,15 @@ export const BorderButtonWrapper = styled(ClearButton)`
   font-family: ${({ theme }) => theme.font.openSans};
   font-weight: bold;
   letter-spacing: 0.1em;
+  background: transparent;
   color: ${({ theme }) => rgba(theme.color.font, 0.7)};
   border: 3px solid ${({ theme }) => rgba(theme.color.font, 0.7)};
-  padding: 0 2em;
-  cursor: pointer;
   border-radius: 10px;
+  cursor: pointer;
+  padding: 1em 2em;
+  transition: all 0.25s ease-in-out;
   &:hover:not(:disabled) {
-    background-color: ${({ theme }) => theme.color.font};
+    background: ${({ theme }) => theme.color.font};
     color: ${({ theme }) => theme.color.background};
     transition: all 0.25s ease-in-out;
   }
