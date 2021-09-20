@@ -1,4 +1,4 @@
-import { breakpoints } from '~/styles';
+import { breakpoints } from 'styles';
 
 export type Breakpoint = keyof typeof breakpoints;
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media } from '~/styles';
+import { media } from 'styles';
 import { rgba } from 'polished';
 
 export const IntroWrapper = styled.section`

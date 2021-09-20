@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ClassicSpinner } from '~/components/atoms';
+import { ClassicSpinner } from 'components/atoms';
 import { BorderButtonWrapper, ButtonProps } from './Buttons.styles';
 
 export const BorderButton: FC<ButtonProps> = (props) => {

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
-import { Box, Container, Row, Column, ScrollButton } from '~/components/atoms';
+import { Box, Container, Row, Column, ScrollButton } from 'components/atoms';
 import { IntroAvatar } from './IntroAvatar';
 import {
   IntroWrapper,

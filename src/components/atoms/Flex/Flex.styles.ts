@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { media } from '~/styles';
-import { Breakpoint } from '~/types';
+import { media } from 'styles';
+import { Breakpoint } from 'types';
 import { Box } from './Box.styles';
 
 export const Container = styled(Box)`

@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Theme } from '~/types';
+import { Theme } from 'types';
 import { ClearButton } from './Buttons.styles';
-import { Box } from '~/components/atoms';
-import { MoonJson as moon, SunJson as sun } from '~/assets';
+import { Box } from 'components/atoms';
+import { MoonJson as moon, SunJson as sun } from 'assets';
 import { animated, config, useSpring } from 'react-spring';
 
 interface ThemeToggleButtonProps {

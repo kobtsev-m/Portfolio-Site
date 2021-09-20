@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { TFunction, useTranslation } from 'react-i18next';
-import { Row, Column } from '~/components/atoms';
-import { DemoCard } from '~/components/molecules';
+import { Row, Column } from 'components/atoms';
+import { DemoCard } from 'components/molecules';
 import { DemoTitle } from './ProjectsDemo.styles';
 
 const demoCards = (t: TFunction) => [

@@ -1,4 +1,4 @@
-import { Breakpoint, StyleRules } from '~/types';
+import { Breakpoint, StyleRules } from 'types';
 
 export const breakpointsSizes = {
   xs: 0,

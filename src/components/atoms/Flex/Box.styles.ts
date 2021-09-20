@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Breakpoint, StyleRules } from '~/types';
-import { media, mediaList } from '~/styles';
+import { Breakpoint, StyleRules } from 'types';
+import { media, mediaList } from 'styles';
 
 type AlignType = 'center' | 'start' | 'end' | 'between' | 'around';
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { media } from '~/styles';
-import { CaretDarkIcon, CaretLightIcon } from '~/assets';
+import { media } from 'styles';
+import { CaretDarkIcon, CaretLightIcon } from 'assets';
 
 export const AboutText = styled.p`
   width: 100%;

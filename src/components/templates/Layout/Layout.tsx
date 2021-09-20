@@ -1,10 +1,10 @@
 import { ReactNode, useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { withTranslation } from 'react-i18next';
-import { darkTheme, GlobalStyle, lightTheme } from '~/styles';
-import { Theme } from '~/types';
-import { SideNav, Header } from '~/components/templates';
-import '~/locales/i18n';
+import { darkTheme, GlobalStyle, lightTheme } from 'styles';
+import { Theme } from 'types';
+import { SideNav, Header } from 'components/templates';
+import 'locales/i18n';
 
 interface LayoutProps {
   children: ReactNode;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Box, Row, Column } from '~/components/atoms';
+import { Box, Row, Column } from 'components/atoms';
 import {
   Wrapper,
   OverflowLink,

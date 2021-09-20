@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
-import { CustomIcon } from '~/components/atoms';
+import { CustomIcon } from 'components/atoms';
 
 interface FixedElementProps {
   top?: string;

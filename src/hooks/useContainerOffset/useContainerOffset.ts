@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useWindowSize } from '~/hooks';
+import { useWindowSize } from 'hooks';
 import useMeasure from 'react-use-measure';
 
 export const useContainerOffset = () => {

@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Box, CustomIcon } from '~/components/atoms';
+import { Box, CustomIcon } from 'components/atoms';
 import { Wrapper, DescriptionText } from './ContactLinks.styles';
-import { MailLinkIcon, TelegramLinkIcon, WhatsappLinkIcon } from '~/assets';
+import { MailLinkIcon, TelegramLinkIcon, WhatsappLinkIcon } from 'assets';
 
 export const ContactLinks: FC = () => {
   const { t } = useTranslation();

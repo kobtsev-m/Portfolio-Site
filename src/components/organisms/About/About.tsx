@@ -3,8 +3,8 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Element } from 'react-scroll';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Transition, animated, config } from 'react-spring';
-import { Box, Container, Row, Column, CustomButton } from '~/components/atoms';
-import { BlockHeader } from '~/components/molecules';
+import { Box, Container, Row, Column, CustomButton } from 'components/atoms';
+import { BlockHeader } from 'components/molecules';
 import {
   AboutText,
   TechnologiesList,

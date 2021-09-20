@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Transition, animated, config } from 'react-spring';
-import { Row, Column } from '~/components/atoms';
+import { Row, Column } from 'components/atoms';
 import { Title, Line, Wrapper } from './BlockHeader.styles';
 
 interface BlockHeaderProps {

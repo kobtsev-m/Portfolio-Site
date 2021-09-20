@@ -7,10 +7,10 @@ import {
   useTransition,
   UseTransitionProps
 } from 'react-spring';
-import { useContainerOffset, useScrollTrigger } from '~/hooks';
-import { Box, Container } from '~/components/atoms';
-import { BlockHeader } from '~/components/molecules';
-import { ProjectsCommercial, ProjectsDemo } from '~/components/organisms';
+import { useContainerOffset, useScrollTrigger } from 'hooks';
+import { Box, Container } from 'components/atoms';
+import { BlockHeader } from 'components/molecules';
+import { ProjectsCommercial, ProjectsDemo } from 'components/organisms';
 import { InscriptionText } from './Projects.styles';
 
 const AnimatedBox = animated(Box);

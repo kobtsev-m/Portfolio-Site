@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Element } from 'react-scroll';
-import { Column, Container, Row, HR } from '~/components/atoms';
+import { Column, Container, Row, HR } from 'components/atoms';
 import {
   BlockHeader,
   ContactForm,
   ContactLinks
-} from '~/components/molecules';
+} from 'components/molecules';
 import {
   Card,
   CardBody,
