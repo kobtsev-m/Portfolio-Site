@@ -1,8 +1,8 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import { HTMLAttributes } from 'react';
+import styled, { css, DefaultTheme, keyframes } from 'styled-components';
 import { rgba } from 'polished';
 
-type HtmlButtonProps = React.HTMLAttributes<HTMLButtonElement>;
+type HtmlButtonProps = HTMLAttributes<HTMLButtonElement>;
 
 export interface ButtonProps extends HtmlButtonProps {
   width?: number;
@@ -14,8 +14,10 @@ export const ClearButton = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 0.24rem;
+  line-height: 0.32rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   background-color: ${({ theme }) => theme.color.background};
   color: ${({ theme }) => theme.color.font};
   border: none;
@@ -25,18 +27,109 @@ export const ClearButton = styled.button<ButtonProps>`
   }
 `;
 
-export const CustomButton = styled(ClearButton)`
+interface CustomButtonSpanProps {
+  color?: keyof DefaultTheme['color'];
+}
+
+export const CustomButtonSpan = styled.span<CustomButtonSpanProps>`
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  transform: translateX(-150%);
+  transition: 0.5s;
+  z-index: -1;
+  ${({ color }) =>
+    color &&
+    css`
+      background-color: ${({ theme }) => rgba(theme.color[color], 0.7)};
+    `}
+  ${({ color }) =>
+    !color &&
+    css`
+      background-color: ${({ theme }) => rgba(theme.color.accent, 0.7)};
+    `}
+  &:nth-child(1) {
+    top: 0;
+    transition-delay: 0s;
+  }
+  &:nth-child(2) {
+    top: 25%;
+    transition-delay: 0.1s;
+  }
+  &:nth-child(3) {
+    top: 50%;
+    transition-delay: 0.2s;
+  }
+  &:nth-child(4) {
+    top: 75%;
+    transition-delay: 0.3s;
+  }
+`;
+
+export interface CustomButtonProps extends ButtonProps {
+  width?: number;
+  color?: keyof DefaultTheme['color'];
+  size?: 'sm' | 'lg';
+  disabled?: boolean;
+  hideCursor?: boolean;
+}
+
+export const CustomButtonWrapper = styled(ClearButton)<CustomButtonProps>`
+  position: relative;
   font-weight: 600;
-  background-color: ${({ theme }) => theme.color.background};
-  color: ${({ theme }) => rgba(theme.color.accent, 0.7)};
-  padding: 0.6em 2em;
-  border: 10px solid ${({ theme }) => rgba(theme.color.accent, 0.7)};
+  background: transparent;
+  border-style: solid;
   border-radius: 10px;
+  overflow: hidden;
+  z-index: 1;
+  padding: 0.6em 2em;
+  ${({ color }) =>
+    color &&
+    css`
+      color: ${({ theme }) => rgba(theme.color[color], 0.7)};
+      border-color: ${({ theme }) => rgba(theme.color[color], 0.7)};
+    `}
+  ${({ color }) =>
+    color ||
+    css`
+      color: ${({ theme }) => rgba(theme.color.accent, 0.7)};
+      border-color: ${({ theme }) => rgba(theme.color.accent, 0.7)};
+    `}
+  ${({ size }) =>
+    size === 'sm' &&
+    css`
+      border-width: 5px;
+    `}
+  ${({ size }) =>
+    size === 'lg' &&
+    css`
+      border-width: 15px;
+    `}
+  ${({ size }) =>
+    !size &&
+    css`
+      border-width: 10px;
+    `}
+  ${({ hideCursor }) =>
+    hideCursor &&
+    css`
+      cursor: default;
+    `}
+  ${({ hideCursor }) =>
+    !hideCursor &&
+    css`
+      &:hover {
+        color: ${({ theme }) => theme.color.background};
+      }
+      &:hover ${CustomButtonSpan} {
+        transform: translateX(0);
+      }
+    `}
 `;
 
 export const BorderButtonWrapper = styled(ClearButton)`
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 0.2rem;
+  line-height: 0.32rem;
   width: 100%;
   height: 2.8em;
   font-family: ${({ theme }) => theme.font.openSans};

@@ -1,10 +1,10 @@
-import React from 'react';
+import { FC } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Transition, animated, config } from 'react-spring';
-import { Row, Column } from 'components/atoms';
+import { Row, Column } from '~/components/atoms';
 import { Title, Line, Wrapper } from './BlockHeader.styles';
 
-interface Props {
+interface BlockHeaderProps {
   title: string;
   orient: 'right' | 'left';
   className?: string;
@@ -12,12 +12,12 @@ interface Props {
 
 const AnimatedTitle = animated(Title);
 
-export const BlockHeader = (props: Props) => {
+export const BlockHeader: FC<BlockHeaderProps> = (props) => {
   const { title, orient, className } = props;
   const translateFrom = `${orient === 'right' ? '' : '-'}200px`;
   return (
     <Row className={className} reverse={orient === 'right'}>
-      <Column lg={6}>
+      <Column lg={12}>
         <VisibilitySensor partialVisibility={true} minTopValue={50}>
           {({ isVisible }) => (
             <Wrapper align={orient}>
@@ -53,7 +53,7 @@ export const BlockHeader = (props: Props) => {
           )}
         </VisibilitySensor>
       </Column>
-      <Column lg={6} hideAt='lg'>
+      <Column lg={12} hideAt='xl'>
         <Wrapper>
           <Line />
         </Wrapper>

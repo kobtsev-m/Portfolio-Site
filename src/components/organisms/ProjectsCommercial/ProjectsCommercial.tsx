@@ -1,32 +1,34 @@
 import { FC } from 'react';
-import { Row } from 'components/atoms';
-import { CommercialCard } from 'components/molecules';
+import { useTranslation } from 'react-i18next';
+import { CommercialCard } from '~/components/molecules';
+import { Row } from '~/components/atoms';
 import {
   AmdbIcon,
   AmdbPreviewImg,
   IntegralIcon,
   IntegralPreviewImg
-} from 'assets';
+} from '~/assets';
 
 export const ProjectsCommercial: FC = () => {
+  const { t } = useTranslation();
   return (
     <Row mt='0.5rem'>
       <CommercialCard
         cardId={1}
-        companyName='Integral Commodities'
+        companyName={t('projects.ic.companyName')}
         companyIcon={IntegralIcon}
-        position='Front-end developer'
-        description='Commercial web site for one of the largest exporters company of Polymers, Fertilisers & Sulphur'
+        position={t('projects.ic.position')}
+        description={t('projects.ic.description')}
         technologies={['Next.js', 'Google Maps API', 'Bootstrap 5']}
         previewImg={IntegralPreviewImg}
         siteLink='https://integral-commodities.ch/'
       />
       <CommercialCard
         cardId={2}
-        companyName='AMDB'
+        companyName={t('projects.amdb.companyName')}
         companyIcon={AmdbIcon}
-        position='Full-stack developer'
-        description='Site for Institute of Biology for storage, editing, searching and analysis researches and experiments'
+        position={t('projects.amdb.position')}
+        description={t('projects.amdb.description')}
         technologies={['Django', 'Bootstrap 4', 'JavaScript', 'Plotly.js']}
         previewImg={AmdbPreviewImg}
         siteLink='https://amdb.online/'

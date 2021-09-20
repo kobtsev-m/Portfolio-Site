@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, CustomIcon } from 'components/atoms';
+import { Box, CustomIcon } from '~/components/atoms';
 import {
   TechnologiesListItem,
   TechnologiesList,
@@ -8,9 +8,9 @@ import {
   IconsHeader,
   Wrapper
 } from './DemoCard.styles';
-import { GithubLinkIcon, WebsiteLinkIcon } from 'assets';
+import { GithubLinkIcon, WebsiteLinkIcon } from '~/assets';
 
-interface Props {
+interface DemoCardProps {
   projectName: string;
   description: string;
   technologies: string[];
@@ -18,7 +18,7 @@ interface Props {
   demoLink: string;
 }
 
-export const DemoCard: FC<Props> = (props) => {
+export const DemoCard: FC<DemoCardProps> = (props) => {
   const { projectName, description, technologies, githubLink, demoLink } =
     props;
   return (
@@ -26,7 +26,7 @@ export const DemoCard: FC<Props> = (props) => {
       <IconsHeader>
         <Box position='absolute' top='0' right='50px'>
           <a href={githubLink} target='_blank' rel='noreferrer'>
-            <CustomIcon src={GithubLinkIcon} width='40px' height='40px' />
+            <CustomIcon src={GithubLinkIcon} width='44px' height='44px' />
           </a>
         </Box>
         <Box position='absolute' top='0' right='0'>

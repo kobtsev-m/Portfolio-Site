@@ -13,6 +13,8 @@ declare module 'styled-components' {
       accent: string;
       secondary: string;
       layout: string;
+      grey: string;
+      lightGrey: string;
     };
   }
 }
@@ -32,7 +34,9 @@ export const darkTheme: DefaultTheme = {
     background: '#1B1B1B',
     accent: '#80AFD7',
     secondary: '#8D754F',
-    layout: '#202020'
+    layout: '#202020',
+    grey: 'rgba(255, 255, 255, 0.2)',
+    lightGrey: 'rgba(255, 255, 255, 0.5)'
   }
 };
 
@@ -44,6 +48,8 @@ export const lightTheme: DefaultTheme = {
     background: '#F4F4F4',
     accent: '#687349',
     secondary: '#8D754F',
-    layout: '#FFFFFF'
+    layout: '#FFFFFF',
+    grey: 'rgba(27, 27, 27, 0.2)',
+    lightGrey: 'rgba(27, 27, 27, 0.5)'
   }
 };

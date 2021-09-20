@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { media } from 'styles/media';
-import { BreakpointType } from 'types/flex';
+import { media } from '~/styles';
+import { Breakpoint } from '~/types';
 import { Box } from './Box.styles';
 
 export const Container = styled(Box)`
@@ -27,17 +27,17 @@ export const Row = styled(Box)<RowProps>`
 `;
 
 const getColStyle = (span: number, gutter: string | undefined) => {
-  let width = (span / 12) * 100;
+  let width = (span / 24) * 100;
   if (!gutter) {
     return `width: ${width}%`;
   }
   let css = '';
-  for (let i = 1; i < Math.floor(12 / span) + 1; ++i) {
+  for (let i = 1; i < Math.floor(24 / span) + 1; ++i) {
     let ml0 = `calc(${gutter} / 2)`;
     let mr0 = `calc(${gutter} / 2)`;
     let ml1 = `calc(${gutter} / 2)`;
     let mr1 = `calc(${gutter} / 2)`;
-    if (i === Math.floor(12 / span)) {
+    if (i === Math.floor(24 / span)) {
       mr0 = '0';
       ml1 = '0';
     }
@@ -51,13 +51,13 @@ const getColStyle = (span: number, gutter: string | undefined) => {
       margin-right: ${mr1};
     }`;
   }
-  let indents = Math.ceil(12 / span);
+  let indents = Math.ceil(24 / span);
   css += `width: calc(${width}% - ${gutter} * ${indents - 1} / ${indents})`;
   return css;
 };
 
 type ColumnLayoutProps = {
-  [k in BreakpointType]?: number;
+  [k in Breakpoint]?: number;
 };
 
 interface ColumnProps extends ColumnLayoutProps {

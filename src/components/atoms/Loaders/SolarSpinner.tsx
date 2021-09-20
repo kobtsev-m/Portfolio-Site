@@ -1,6 +1,7 @@
+import { FC } from 'react';
 import { SolarSpinnerWrapper, SpinnerProps } from './Loaders.styles';
 
-export const SolarSpinner = (props: SpinnerProps) => (
+export const SolarSpinner: FC<SpinnerProps> = (props) => (
   <SolarSpinnerWrapper {...props}>
     <div className='solar-system'>
       <div className='earth-orbit orbit'>

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { rgba } from 'polished';
-import { media } from './media';
+import { media } from './Media';
 
 export const GlobalStyle = createGlobalStyle`
   * {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { media } from 'styles/media';
+import { media } from '~/styles';
 import { rgba } from 'polished';
 
 export const IntroWrapper = styled.section`
@@ -44,4 +44,11 @@ export const AvatarSvg = styled.svg`
   height: 400px;
   border-radius: 10px;
   ${media('lg', 'height: 550px')}
+`;
+
+export const AvatarJpg = styled.img`
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  ${media('lg', 'height: 550px')};
 `;

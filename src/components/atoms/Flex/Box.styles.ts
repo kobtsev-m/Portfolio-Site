@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { BreakpointType, RulesType } from 'types/flex';
-import { media, mediaList } from 'styles/media';
+import { Breakpoint, StyleRules } from '~/types';
+import { media, mediaList } from '~/styles';
 
 type AlignType = 'center' | 'start' | 'end' | 'between' | 'around';
 
@@ -15,25 +15,25 @@ interface BoxProps {
   flex?: boolean;
   flexWrap?: boolean;
   flexDirection?: 'column' | 'row';
-  align?: AlignType | RulesType<AlignType>;
-  justify?: AlignType | RulesType<AlignType>;
-  hideAt?: BreakpointType;
-  showAt?: BreakpointType;
-  p?: string | RulesType;
-  pt?: string | RulesType;
-  pb?: string | RulesType;
-  pr?: string | RulesType;
-  pl?: string | RulesType;
-  m?: string | RulesType;
-  mt?: string | RulesType;
-  mb?: string | RulesType;
-  mr?: string | RulesType;
-  ml?: string | RulesType;
+  align?: AlignType | StyleRules<AlignType>;
+  justify?: AlignType | StyleRules<AlignType>;
+  hideAt?: Breakpoint;
+  showAt?: Breakpoint;
+  p?: string | StyleRules;
+  pt?: string | StyleRules;
+  pb?: string | StyleRules;
+  pr?: string | StyleRules;
+  pl?: string | StyleRules;
+  m?: string | StyleRules;
+  mt?: string | StyleRules;
+  mb?: string | StyleRules;
+  mr?: string | StyleRules;
+  ml?: string | StyleRules;
 }
 
 const formatAlignValue = (
   prop: 'align-items' | 'justify-content',
-  value: string | RulesType | undefined
+  value: string | StyleRules | undefined
 ) => {
   if (value === 'start' || value === 'end') {
     return `${prop}: flex-${value}`;
@@ -47,13 +47,13 @@ const formatAlignValue = (
   return;
 };
 
-const mediaProp = (prop: string, rule: string | RulesType | undefined) => {
+const mediaProp = (prop: string, rule: string | StyleRules | undefined) => {
   if (typeof rule === 'object') {
     return mediaList(
-      (Object.keys(rule) as BreakpointType[]).reduce((acc, key) => {
+      (Object.keys(rule) as Breakpoint[]).reduce((acc, key) => {
         acc[key] = mediaProp(prop, rule[key]) as string;
         return acc;
-      }, {} as Record<BreakpointType, string>)
+      }, {} as Record<Breakpoint, string>)
     );
   }
   if (prop === 'align-items' || prop === 'justify-content') {

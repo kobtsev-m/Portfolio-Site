@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useWindowSize } from 'hooks/useWindowSize';
+import { useWindowSize } from '~/hooks';
 import useMeasure from 'react-use-measure';
 
 export const useContainerOffset = () => {
-  const [containerOffset, setContainerOffset] = useState<number>(0);
-  const { width: windowWidth } = useWindowSize();
+  const [containerOffset, setContainerOffset] = useState(0);
+  const { windowWidth } = useWindowSize();
   const [containerRef, { width: containerWidth }] = useMeasure();
 
   useEffect(() => {

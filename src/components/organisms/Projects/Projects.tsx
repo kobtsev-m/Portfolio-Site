@@ -1,67 +1,88 @@
-import { FC, useState } from 'react';
-import { animated, config, useTransition } from 'react-spring';
-import VisibilitySensor from 'react-visibility-sensor';
-import { useContainerOffset } from 'hooks/useContainerOffset';
-import { Box, Container } from 'components/atoms';
-import { BlockHeader } from 'components/molecules';
-import { ProjectsCommercial, ProjectsDemo } from 'components/organisms';
-import { InscriptionTitle } from './Projects.styles';
+import { FC } from 'react';
+import { Element } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
+import {
+  animated,
+  config,
+  useTransition,
+  UseTransitionProps
+} from 'react-spring';
+import { useContainerOffset, useScrollTrigger } from '~/hooks';
+import { Box, Container } from '~/components/atoms';
+import { BlockHeader } from '~/components/molecules';
+import { ProjectsCommercial, ProjectsDemo } from '~/components/organisms';
+import { InscriptionText } from './Projects.styles';
 
 const AnimatedBox = animated(Box);
 
 export const Projects: FC = () => {
-  const [isCommercialVisible, setIsCommercialVisible] = useState(false);
-  const [isDemoVisible, setIsDemoVisible] = useState(false);
   const { containerOffset, containerRef } = useContainerOffset();
+  const { ref: commercialRef, isUnder: isCommercial } = useScrollTrigger();
+  const { ref: demoRef, isUnder: isDemo } = useScrollTrigger();
+  const { t } = useTranslation();
 
-  const isInscriptionVisible = containerOffset >= 140;
+  const isLargeDesktop = containerOffset >= 140;
 
-  const inscriptionAnimation = useTransition(
-    isCommercialVisible || isDemoVisible,
-    {
-      from: { opacity: 0 },
-      enter: { opacity: 1 },
-      leave: { opacity: 0 },
-      reset: isCommercialVisible || isDemoVisible,
-      config: config.slow
-    }
+  const getInscriptionAnimation = (
+    trigger: boolean
+  ): [boolean, UseTransitionProps] => {
+    return [
+      trigger,
+      {
+        from: {
+          transform: `translateX(${containerOffset / 4}px)`,
+          opacity: 0
+        },
+        enter: { transform: 'translateX(0px)', opacity: 1 },
+        leave: {
+          transform: `translateX(${containerOffset / 4}px)`,
+          opacity: 0
+        },
+        reverse: trigger,
+        config: config.slow
+      }
+    ];
+  };
+
+  const commercialAnimation = useTransition(
+    ...getInscriptionAnimation(isCommercial)
+  );
+  const demoAnimation = useTransition(...getInscriptionAnimation(isDemo));
+
+  const getInscription = (styles: any, title: string) => (
+    <AnimatedBox
+      position='fixed'
+      top='50%'
+      right={`${containerOffset / 2}px`}
+      style={styles}
+    >
+      <InscriptionText>{title}</InscriptionText>
+    </AnimatedBox>
   );
 
   return (
-    <section>
+    <Element name='projects'>
       <Container ref={containerRef} mt='0.5rem'>
-        <BlockHeader title='projects' orient='right' />
-        <VisibilitySensor
-          partialVisibility={true}
-          minTopValue={150}
-          onChange={(v) => isInscriptionVisible && setIsCommercialVisible(v)}
-        >
+        <BlockHeader title={t('nav.projects')} orient='right' />
+        <div ref={commercialRef}>
           <ProjectsCommercial />
-        </VisibilitySensor>
-        <VisibilitySensor
-          partialVisibility={true}
-          minTopValue={300}
-          onChange={(v) => isInscriptionVisible && setIsDemoVisible(v)}
-        >
+        </div>
+        <div ref={demoRef}>
           <ProjectsDemo />
-        </VisibilitySensor>
+        </div>
       </Container>
-      {isInscriptionVisible &&
-        inscriptionAnimation(
-          (styles, item) =>
-            item && (
-              <AnimatedBox
-                position='fixed'
-                top='50%'
-                right={`${containerOffset / 2}px`}
-                style={styles}
-              >
-                <InscriptionTitle>
-                  {isDemoVisible ? 'demo' : 'commercial'}
-                </InscriptionTitle>
-              </AnimatedBox>
-            )
-        )}
-    </section>
+      {isLargeDesktop && (
+        <>
+          {commercialAnimation(
+            (styles, item) =>
+              item && getInscription(styles, t('projects.commercial'))
+          )}
+          {demoAnimation(
+            (styles, item) =>
+              item && getInscription(styles, t('projects.demo'))
+          )}
+        </>
+      )}
+    </Element>
   );
 };

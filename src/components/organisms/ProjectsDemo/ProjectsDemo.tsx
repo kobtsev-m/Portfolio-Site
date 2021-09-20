@@ -1,50 +1,48 @@
 import { FC } from 'react';
-import { Row, Column } from 'components/atoms';
-import { DemoCard } from 'components/molecules';
+import { TFunction, useTranslation } from 'react-i18next';
+import { Row, Column } from '~/components/atoms';
+import { DemoCard } from '~/components/molecules';
 import { DemoTitle } from './ProjectsDemo.styles';
 
-const demoCards = [
+const demoCards = (t: TFunction) => [
   {
     projectName: 'Blog site',
-    description:
-      'Example of simple blog site with the division of posts into categories',
+    description: t('projects.blogSite.description'),
     technologies: ['React', 'Django', 'Bootstrap'],
     githubLink: 'https://github.com/kobtsev-m/Rest-Api-Blog/',
     demoLink: 'https://kobtsev-m.github.io/Rest-Api-Blog'
   },
   {
     projectName: 'Polygonal animations',
-    description:
-      'Generating animation of polygonal svg images with triangulation algorithm',
+    description: t('projects.polygonalAnimations.description'),
     technologies: ['Anime.js', 'Django'],
     githubLink: 'https://github.com/kobtsev-m/Polygonal-Svg',
     demoLink: 'https://pure-oasis-09000.herokuapp.com/'
   },
   {
-    projectName: 'Car Searcher',
-    description: 'Filter search example with cars models',
-    technologies: ['React', 'Django'],
-    githubLink: 'https://github.com/relax-man/Car-Searcher',
-    demoLink: 'https://relax-man.github.io/Car-Searcher'
-  },
-  {
-    projectName: 'Django OAuth',
-    description:
-      'Example of OAuth in Django with user profile and settings pages',
-    technologies: ['Django', 'AllAuth'],
-    githubLink: 'https://github.com/kobtsev-m/Django-Auth',
-    demoLink: 'https://warm-beyond-18141.herokuapp.com/'
-  },
-  {
     projectName: 'Animal Shelter',
-    description: 'Site of animal shelter with animals cards and search menu',
+    description: t('projects.animalShelter.description'),
     technologies: ['Django', 'AWS', 'Bootstrap'],
     githubLink: 'https://github.com/kobtsev-m/Animal-Shelter',
     demoLink: 'https://frozen-springs-02490.herokuapp.com/'
   },
   {
+    projectName: 'Django OAuth',
+    description: t('projects.djangoOAuth.description'),
+    technologies: ['Django', 'AllAuth'],
+    githubLink: 'https://github.com/kobtsev-m/Django-Auth',
+    demoLink: 'https://warm-beyond-18141.herokuapp.com/accounts/login/'
+  },
+  {
+    projectName: 'Car Searcher',
+    description: t('projects.carSearcher.description'),
+    technologies: ['React', 'Django'],
+    githubLink: 'https://github.com/relax-man/Car-Searcher',
+    demoLink: 'https://relax-man.github.io/Car-Searcher'
+  },
+  {
     projectName: 'Waxom',
-    description: 'Adaptive layout of landing page',
+    description: t('projects.waxom.description'),
     technologies: ['Sass', 'Bootstrap'],
     githubLink: 'https://github.com/kobtsev-m/Waxom',
     demoLink: 'https://kobtsev-m.github.io/Waxom'
@@ -52,22 +50,23 @@ const demoCards = [
 ];
 
 export const ProjectsDemo: FC = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Row mt='0.5rem' align='center'>
-        <Column lg={4} hideAt='lg'>
+        <Column lg={8} hideAt='lg'>
           <hr />
         </Column>
-        <Column lg={4} flex justify='center'>
-          <DemoTitle>other projects</DemoTitle>
+        <Column lg={8} flex justify='center'>
+          <DemoTitle>{t('projects.otherProjects')}</DemoTitle>
         </Column>
-        <Column lg={4} hideAt='lg'>
+        <Column lg={8} hideAt='lg'>
           <hr />
         </Column>
       </Row>
       <Row mt='1rem'>
-        {demoCards.map((card, i) => (
-          <Column key={i} md={6} xl={4} gutter='0.3rem' mb='0.3rem'>
+        {demoCards(t).map((card, i) => (
+          <Column key={i} md={12} xl={8} gutter='0.3rem' mb='0.3rem'>
             <DemoCard {...card} />
           </Column>
         ))}

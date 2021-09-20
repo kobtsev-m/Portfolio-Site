@@ -1,10 +1,11 @@
 import { memo, useState } from 'react';
-import { animated, config, useSprings } from 'react-spring';
-import { darkTheme } from 'styles/theme';
-import { hexToRgb } from 'utils/converters';
-import { AvatarJson as avatar } from 'assets';
-import { Box, BorderButton } from 'components/atoms';
-import { AvatarSvg } from './Intro.styles';
+import { useTranslation } from 'react-i18next';
+import { animated, config, useSpring, useSprings } from 'react-spring';
+import { darkTheme } from '~/styles';
+import { hexToRgb } from '~/utils';
+import { AvatarJpgImg, AvatarJson as avatar } from '~/assets';
+import { Box, BorderButton } from '~/components/atoms';
+import { AvatarSvg, AvatarJpg } from './Intro.styles';
 
 enum AnimationStatus {
   Animation1,
@@ -12,10 +13,13 @@ enum AnimationStatus {
   Stopped
 }
 
+const AnimatedAvatarJpg = animated(AvatarJpg);
+
 export const IntroAvatar = memo(() => {
   const [status, setStatus] = useState<AnimationStatus>(
-    AnimationStatus.Stopped
+    AnimationStatus.Animation1
   );
+  const { t } = useTranslation();
 
   const effects1 = useSprings(
     avatar.length,
@@ -52,12 +56,17 @@ export const IntroAvatar = memo(() => {
     }))
   );
 
+  const effects3 = useSpring({
+    opacity: status === AnimationStatus.Stopped ? 1 : 0,
+    config: { ...config.molasses, duration: 1000 }
+  });
+
   const handleAnimateClick = () => {
     setStatus(AnimationStatus.Animation2);
   };
 
   return (
-    <div>
+    <Box position='relative'>
       <AvatarSvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 718 960'>
         <rect
           x='0'
@@ -72,14 +81,17 @@ export const IntroAvatar = memo(() => {
           )
         )}
       </AvatarSvg>
+      <Box position='absolute' top='0' left='0'>
+        <AnimatedAvatarJpg src={AvatarJpgImg} style={effects3} />
+      </Box>
       <Box mt='0.5em'>
         <BorderButton
           onClick={handleAnimateClick}
           isLoading={status !== AnimationStatus.Stopped}
         >
-          ANIMATE
+          {t('intro.animate')}
         </BorderButton>
       </Box>
-    </div>
+    </Box>
   );
 });

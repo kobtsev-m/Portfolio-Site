@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Box, Row, Column } from 'components/atoms';
+import { useTranslation } from 'react-i18next';
+import { Box, Row, Column } from '~/components/atoms';
 import {
   Wrapper,
   OverflowLink,
@@ -11,7 +12,7 @@ import {
   TechnologiesListItem
 } from './CommercialCard.styles';
 
-interface Props {
+interface CommercialCardProps {
   cardId: number;
   companyName?: string;
   companyIcon?: string;
@@ -22,7 +23,7 @@ interface Props {
   siteLink: string;
 }
 
-export const CommercialCard: FC<Props> = (props) => {
+export const CommercialCard: FC<CommercialCardProps> = (props) => {
   const {
     companyName,
     companyIcon,
@@ -32,30 +33,35 @@ export const CommercialCard: FC<Props> = (props) => {
     previewImg,
     siteLink
   } = props;
+
+  const { t } = useTranslation();
+
   return (
     <Wrapper mb='0.5rem'>
       <Row>
-        <Column lg={6} p={{ xs: '0.5rem 0.5rem 0 0.5rem', lg: '0.5rem' }}>
+        <Column lg={12} p={{ xs: '0.5rem 0.5rem 0 0.5rem', lg: '0.5rem' }}>
           <CardTitle icon={companyIcon}>{companyName}</CardTitle>
           <CardSubTitle>{position}</CardSubTitle>
           <CardDescription>{description}</CardDescription>
-          {technologies && (
-            <TechnologiesList>
-              {technologies?.map((technology, i) => (
-                <TechnologiesListItem key={i}>
-                  {technology}
-                </TechnologiesListItem>
-              ))}
-            </TechnologiesList>
-          )}
+          <Box hideAt='lg'>
+            {technologies && (
+              <TechnologiesList>
+                {technologies?.map((technology, i) => (
+                  <TechnologiesListItem key={i}>
+                    {technology}
+                  </TechnologiesListItem>
+                ))}
+              </TechnologiesList>
+            )}
+          </Box>
         </Column>
-        <Column position='relative' lg={6} height={100} p='0.5rem'>
+        <Column lg={12} position='relative' height={100} p='0.5rem'>
           <PreviewImage src={previewImg} />
           <Box position='absolute' top='0' left='0' width={100} height={100}>
             <OverflowLink href={siteLink} target='_blank' rel='noreferrer'>
-              Web Site
+              {t('projects.webSite')}
             </OverflowLink>
-            <OverflowLink href='/'>Read More</OverflowLink>
+            <OverflowLink href='/'>{t('projects.readMore')}</OverflowLink>
           </Box>
         </Column>
       </Row>

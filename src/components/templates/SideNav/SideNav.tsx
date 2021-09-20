@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { useContainerOffset } from 'hooks/useContainerOffset';
-import { TelegramIcon, GithubIcon } from 'assets';
-import { Container } from 'components/atoms';
+import { Container } from '~/components/atoms';
+import { useContainerOffset } from '~/hooks';
+import { TelegramIcon, GithubIcon } from '~/assets';
 import { SideIcon, SideLine } from './SideNav.styles';
 
 export const SideNav: FC = () => {

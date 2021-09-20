@@ -1,4 +1,4 @@
-import { BreakpointType, RulesType } from 'types/flex';
+import { Breakpoint, StyleRules } from '~/types';
 
 export const breakpointsSizes = {
   xs: 0,
@@ -16,12 +16,12 @@ export const breakpoints = Object.entries(breakpointsSizes).reduce(
   {} as { [k in keyof typeof breakpointsSizes]: string }
 );
 
-export const media = (key: BreakpointType, value: string) => {
+export const media = (key: Breakpoint, value: string) => {
   return `${breakpoints[key]} { ${value}; }`;
 };
 
-export const mediaList = (ruleset: RulesType) => {
-  return (Object.keys(ruleset) as BreakpointType[]).reduce((css, key) => {
+export const mediaList = (ruleset: StyleRules) => {
+  return (Object.keys(ruleset) as Breakpoint[]).reduce((css, key) => {
     if (key === 'xs') {
       return `${css} ${ruleset[key]};`;
     }

@@ -1,12 +1,12 @@
-import React from 'react';
+import { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import { Layout, Router } from 'components/templates';
+import { Layout, Router } from '~/components/templates';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Suspense fallback='Loading...'>
     <Layout>
       <Router />
     </Layout>
-  </React.StrictMode>,
+  </Suspense>,
   document.getElementById('root')
 );

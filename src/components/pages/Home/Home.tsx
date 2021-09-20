@@ -1,6 +1,7 @@
-import { About, Contact, Intro, Projects } from 'components/organisms';
+import { FC } from 'react';
+import { About, Contact, Intro, Projects } from '~/components/organisms';
 
-export const Home = () => {
+export const Home: FC = () => {
   return (
     <>
       <Intro />

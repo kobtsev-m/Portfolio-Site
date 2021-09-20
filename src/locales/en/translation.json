@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "resume": "Resume"
+  },
+  "intro": {
+    "title": "Michael Kobtsev",
+    "subtitle": "React Front-end developer in search of interesting projects and proposals",
+    "description": "I specialize on creating user interfaces & developing rich web applications. I have experience working with big international company & creating many demo projects in this area.",
+    "animate": "Animate"
+  },
+  "about": {
+    "text": "Hello, my name is Michael, I’m <0>20 years</0> old <0>Computer Science student</0> who is interested in creating web applications<1></1><1></1>I have about <0>2 years experience</0> in which I managed to work on 2 commercial projects and over 10 demo projects<1></1><1></1> At first I was practicing as a <0> Python Full-stack developer </0> and now decided to choose a narrower focus<1></1><1></1> Main technologies I’ve been working with are shown on the right",
+    "technologies": "Technologies"
+  },
+  "projects": {
+    "webSite": "Web Site",
+    "readMore": "Read More",
+    "otherProjects": "Other projects",
+    "commercial": "Commercial",
+    "demo": "Demo",
+    "ic": {
+      "companyName": "Integral Commodities",
+      "position": "Front-end developer",
+      "description": "Commercial web site for one of the largest exporters company of Polymers, Fertilisers & Sulphur"
+    },
+    "amdb": {
+      "companyName": "AMDB",
+      "position": "Full-stack developer",
+      "description": "Site for Institute of Biology for storage, editing, searching and analysis researches and experiments"
+    },
+    "blogSite": {
+      "description": "Example of simple blog site with the division of posts into categories"
+    },
+    "polygonalAnimations": {
+      "description": "Generating animation of polygonal svg images with triangulation algorithm"
+    },
+    "animalShelter": {
+      "description": "Site of animal shelter with animals cards and search menu"
+    },
+    "djangoOAuth": {
+      "description": "Example of OAuth in Django with user profile and settings pages"
+    },
+    "carSearcher": {
+      "description": "Filter search example with cars models"
+    },
+    "waxom": {
+      "description": "Adaptive layout of landing page"
+    }
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "additionalText": "You can also right directly, using one of following methods:",
+    "send": "Send"
+  }
+}

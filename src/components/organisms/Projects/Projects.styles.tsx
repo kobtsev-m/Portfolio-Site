@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
 
-export const InscriptionTitle = styled.h5`
+export const InscriptionText = styled.h5`
   color: ${({ theme }) => rgba(theme.color.font, 0.8)};
   font-family: ${({ theme }) => theme.font.montserrat};
   font-style: normal;

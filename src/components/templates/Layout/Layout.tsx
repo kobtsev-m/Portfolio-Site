@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from 'styles/global';
-import { darkTheme, lightTheme } from 'styles/theme';
-import { Theme } from 'types/styled';
-import { SideNav, Header } from 'components/templates';
+import { withTranslation } from 'react-i18next';
+import { darkTheme, GlobalStyle, lightTheme } from '~/styles';
+import { Theme } from '~/types';
+import { SideNav, Header } from '~/components/templates';
+import '~/locales/i18n';
 
-interface Props {
-  children: React.ReactNode;
+interface LayoutProps {
+  children: ReactNode;
 }
 
-export const Layout = (props: Props) => {
+export const Layout = withTranslation()((props: LayoutProps) => {
   const { children } = props;
-  const [theme, setTheme] = useState<Theme>(Theme.Dark);
+  const [theme, setTheme] = useState(Theme.Dark);
 
   const toggleTheme = () => {
-    theme === Theme.Dark ? setTheme(Theme.Light) : setTheme(Theme.Dark);
+    const newTheme = theme === Theme.Dark ? Theme.Light : Theme.Dark;
+    localStorage.setItem('theme', Theme[newTheme]);
+    setTheme(newTheme);
   };
+
+  useEffect(() => {
+    if (localStorage.getItem('theme') !== Theme[Theme.Dark]) {
+      setTheme(Theme.Light);
+    }
+  }, []);
 
   return (
     <ThemeProvider theme={theme === Theme.Dark ? darkTheme : lightTheme}>
@@ -25,4 +34,4 @@ export const Layout = (props: Props) => {
       <main>{children}</main>
     </ThemeProvider>
   );
-};
+});

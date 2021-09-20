@@ -1,33 +1,18 @@
 import { FC, useEffect, useState } from 'react';
-import { useWindowSize } from 'hooks/useWindowSize';
-import { Theme } from 'types/styled';
-import { DarkMoonIcon, LightMoonIcon, WorldIcon, BarsIcon } from 'assets';
-import {
-  Box,
-  Container,
-  Row,
-  Column,
-  ClearButton,
-  CustomButton,
-  CustomIcon
-} from 'components/atoms';
-import {
-  Nav,
-  Navbar,
-  NavCollapse,
-  NavCollapseItem,
-  NavItem
-} from './Header.styles';
+import { Theme } from '~/types';
+import { useWindowSize } from '~/hooks';
+import { Container } from '~/components/atoms';
+import { Nav, NavCollapse } from '~/components/molecules';
+import { Navbar } from './Header.styles';
 
-interface Props {
+interface HeaderProps {
   theme: Theme;
   toggleTheme: () => void;
 }
 
-export const Header: FC<Props> = (props) => {
-  const { theme, toggleTheme } = props;
+export const Header: FC<HeaderProps> = (props) => {
   const [navCollapse, setNavCollapse] = useState(false);
-  const { width: windowWidth } = useWindowSize();
+  const { windowWidth } = useWindowSize();
 
   useEffect(() => {
     setNavCollapse(false);
@@ -35,65 +20,14 @@ export const Header: FC<Props> = (props) => {
 
   return (
     <Navbar>
-      <Container>
-        <Row>
-          <Column xs={6} sm={10} xl={5} flex align='center'>
-            <Nav>
-              <NavItem>
-                <ClearButton>
-                  <CustomIcon
-                    src={WorldIcon}
-                    width='45px'
-                    height='45px'
-                    margin
-                  />
-                  <Box hideAt='lg'>EN</Box>
-                </ClearButton>
-              </NavItem>
-              <NavItem>
-                <ClearButton onClick={toggleTheme}>
-                  <CustomIcon
-                    src={theme === Theme.Dark ? DarkMoonIcon : LightMoonIcon}
-                    width='45px'
-                    height='45px'
-                    margin
-                  />
-                  <Box hideAt='lg'>{theme.toUpperCase()} THEME</Box>
-                </ClearButton>
-              </NavItem>
-            </Nav>
-          </Column>
-          <Column xs={6} sm={2} xl={7} flex justify='end' hideAt='xl'>
-            <Nav>
-              <NavItem>ABOUT</NavItem>
-              <NavItem>PROJECTS</NavItem>
-              <NavItem>CONTACT</NavItem>
-              <NavItem>
-                <CustomButton>RESUME</CustomButton>
-              </NavItem>
-            </Nav>
-          </Column>
-          <Column xs={6} sm={2} xl={7} flex justify='end' showAt='xl'>
-            <ClearButton onClick={() => setNavCollapse(!navCollapse)}>
-              <CustomIcon src={BarsIcon} width='50px' height='50px' />
-            </ClearButton>
-          </Column>
-        </Row>
-        {navCollapse && (
-          <Row>
-            <Column position='relative'>
-              <NavCollapse>
-                <NavCollapseItem>ABOUT</NavCollapseItem>
-                <NavCollapseItem>PROJECTS</NavCollapseItem>
-                <NavCollapseItem>CONTACT</NavCollapseItem>
-                <NavCollapseItem>
-                  <CustomButton>RESUME</CustomButton>
-                </NavCollapseItem>
-              </NavCollapse>
-            </Column>
-          </Row>
-        )}
+      <Container position='relative'>
+        <Nav
+          navCollapse={navCollapse}
+          setNavCollapse={setNavCollapse}
+          {...props}
+        />
       </Container>
+      <NavCollapse navCollapse={navCollapse} setNavCollapse={setNavCollapse} />
     </Navbar>
   );
 };

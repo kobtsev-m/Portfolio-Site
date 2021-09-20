@@ -1,7 +1,8 @@
+import { FC } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home } from 'components/pages';
+import { Home } from '~/components/pages';
 
-export const Router = () => (
+export const Router: FC = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path='/' render={() => <Home />} />
