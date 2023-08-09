@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.js": "/Portfolio/static/js/main.34034b2e.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.34034b2e.chunk.js.map",
+    "runtime-main.js": "/Portfolio/static/js/runtime-main.1df2450b.js",
+    "runtime-main.js.map": "/Portfolio/static/js/runtime-main.1df2450b.js.map",
+    "static/js/2.45661f9c.chunk.js": "/Portfolio/static/js/2.45661f9c.chunk.js",
+    "static/js/2.45661f9c.chunk.js.map": "/Portfolio/static/js/2.45661f9c.chunk.js.map",
+    "index.html": "/Portfolio/index.html",
+    "static/js/2.45661f9c.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.45661f9c.chunk.js.LICENSE.txt",
+    "static/media/amdb-preview.dd60c61f.png": "/Portfolio/static/media/amdb-preview.dd60c61f.png",
+    "static/media/amdb.6e55f67a.svg": "/Portfolio/static/media/amdb.6e55f67a.svg",
+    "static/media/avatar.10ee48a4.jpg": "/Portfolio/static/media/avatar.10ee48a4.jpg",
+    "static/media/bars-solid.e8db7520.svg": "/Portfolio/static/media/bars-solid.e8db7520.svg",
+    "static/media/caret-dark.dc59f7fd.svg": "/Portfolio/static/media/caret-dark.dc59f7fd.svg",
+    "static/media/caret-light.f628130c.svg": "/Portfolio/static/media/caret-light.f628130c.svg",
+    "static/media/check-solid.5dcf9568.svg": "/Portfolio/static/media/check-solid.5dcf9568.svg",
+    "static/media/dark-moon.a3325cc3.svg": "/Portfolio/static/media/dark-moon.a3325cc3.svg",
+    "static/media/github-brands.e2f07326.svg": "/Portfolio/static/media/github-brands.e2f07326.svg",
+    "static/media/github-link.a60f4a82.svg": "/Portfolio/static/media/github-link.a60f4a82.svg",
+    "static/media/integral-preview.0d6ecb8d.png": "/Portfolio/static/media/integral-preview.0d6ecb8d.png",
+    "static/media/integral.661cee56.svg": "/Portfolio/static/media/integral.661cee56.svg",
+    "static/media/light-moon.9e498298.svg": "/Portfolio/static/media/light-moon.9e498298.svg",
+    "static/media/mail-link.e1ed3d0c.svg": "/Portfolio/static/media/mail-link.e1ed3d0c.svg",
+    "static/media/resume-en.42350931.pdf": "/Portfolio/static/media/resume-en.42350931.pdf",
+    "static/media/resume-ru.f112145f.pdf": "/Portfolio/static/media/resume-ru.f112145f.pdf",
+    "static/media/telegram-brands.2edc5f39.svg": "/Portfolio/static/media/telegram-brands.2edc5f39.svg",
+    "static/media/telegram-link.27377ddf.svg": "/Portfolio/static/media/telegram-link.27377ddf.svg",
+    "static/media/website-link.5eb025a9.svg": "/Portfolio/static/media/website-link.5eb025a9.svg",
+    "static/media/whatsapp-link.f15d737e.svg": "/Portfolio/static/media/whatsapp-link.f15d737e.svg",
+    "static/media/world.1a7da3cd.svg": "/Portfolio/static/media/world.1a7da3cd.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1df2450b.js",
+    "static/js/2.45661f9c.chunk.js",
+    "static/js/main.34034b2e.chunk.js"
+  ]
+}
