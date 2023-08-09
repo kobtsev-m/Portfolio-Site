@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/Portfolio/static/js/main.34034b2e.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.34034b2e.chunk.js.map",
+    "main.js": "/Portfolio/static/js/main.68935a8d.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.68935a8d.chunk.js.map",
     "runtime-main.js": "/Portfolio/static/js/runtime-main.1df2450b.js",
     "runtime-main.js.map": "/Portfolio/static/js/runtime-main.1df2450b.js.map",
-    "static/js/2.45661f9c.chunk.js": "/Portfolio/static/js/2.45661f9c.chunk.js",
-    "static/js/2.45661f9c.chunk.js.map": "/Portfolio/static/js/2.45661f9c.chunk.js.map",
+    "static/js/2.ba365551.chunk.js": "/Portfolio/static/js/2.ba365551.chunk.js",
+    "static/js/2.ba365551.chunk.js.map": "/Portfolio/static/js/2.ba365551.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "static/js/2.45661f9c.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.45661f9c.chunk.js.LICENSE.txt",
+    "static/js/2.ba365551.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.ba365551.chunk.js.LICENSE.txt",
     "static/media/amdb-preview.dd60c61f.png": "/Portfolio/static/media/amdb-preview.dd60c61f.png",
     "static/media/amdb.6e55f67a.svg": "/Portfolio/static/media/amdb.6e55f67a.svg",
     "static/media/avatar.10ee48a4.jpg": "/Portfolio/static/media/avatar.10ee48a4.jpg",
@@ -32,7 +32,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.1df2450b.js",
-    "static/js/2.45661f9c.chunk.js",
-    "static/js/main.34034b2e.chunk.js"
+    "static/js/2.ba365551.chunk.js",
+    "static/js/main.68935a8d.chunk.js"
   ]
 }
